@@ -14,7 +14,7 @@
     <body>
     
         <header id="head" >
-        	<p>Codecall tutorials User Login</p>
+        	<p>PlacePicker Login</p>
         	<p><a href="register.php"><span id="register">Register</span></a></p>
         </header>
         
