@@ -3,9 +3,9 @@
 	error_reporting(E_ALL);
 
 	//define some constants
-    define( "DB_DSN", "mysql:host=localhost;dbname=codecalltut" );
-    define( "DB_USERNAME", "root" );
-    define( "DB_PASSWORD", "" );
+    define( "DB_DSN", "mysql:host=localhost;dbname=users" );
+    define( "DB_USERNAME", "???" );
+    define( "DB_PASSWORD", "???" );
 	
 	//include the classes
 	include_once("user.php");
