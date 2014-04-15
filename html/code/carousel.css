@@ -39,7 +39,7 @@ body {
 
 /* Carousel base class */
 .carousel {
-  height: 440px;
+  height: 360px;
   margin-bottom: 60px;
 }
 /* Since positioning the image, we need to help out the caption */
@@ -49,9 +49,9 @@ body {
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 440px;
+  height: 360px;
   background-color: #FF0000;
-  top:0px
+  top:0px;
 }
 
 .carousel-inner > .item > div {
@@ -118,11 +118,11 @@ body {
   }
   .navbar-wrapper .container {
     padding-right: 15px;
-    padding-left:  15px;
+    padding-left: 15px;
   }
   .navbar-wrapper .navbar {
     padding-right: 0;
-    padding-left:  0;
+    padding-left: 0;
   }
 
   /* The navbar becomes detached from the top, so we round the corners */
