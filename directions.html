@@ -1,0 +1,62 @@
+<script>
+var initialLocation;
+var destination = new google.maps.LatLng(40.69847032728747, -73.9514422416687);
+var siberia = new google.maps.LatLng(60, 105);
+var newyork = new google.maps.LatLng(40.69847032728747, -73.9514422416687);
+var browserSupportFlag =  new Boolean();
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
+
+
+function initialize() {
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  var myOptions = {
+    zoom: 6,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+  directionsDisplay.setMap(map);
+
+  // Try W3C Geolocation (Preferred)
+  if(navigator.geolocation) {
+    browserSupportFlag = true;
+    navigator.geolocation.getCurrentPosition(function(position) {
+      initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+      //map.setCenter(initialLocation);
+    }, function() {
+      handleNoGeolocation(browserSupportFlag);
+    });
+	calcRoute(initialLocation, destination);
+  }
+  // Browser doesn't support Geolocation
+  else {
+    browserSupportFlag = false;
+    handleNoGeolocation(browserSupportFlag);
+  }
+
+  function handleNoGeolocation(errorFlag) {
+    if (errorFlag == true) {
+      alert("Geolocation service failed.");
+      initialLocation = newyork;
+    } else {
+      alert("Your browser doesn't support geolocation. We've placed you in Siberia.");
+      initialLocation = siberia;
+    }
+    map.setCenter(initialLocation);
+  }
+  
+  function calcRoute(init, dest) {
+  var start = document.getElementById(init).value;
+  var end = document.getElementById(dest).value;
+  var request = {
+    origin:start,
+    destination:end,
+    travelMode: google.maps.TravelMode.DRIVING
+  };
+  directionsService.route(request, function(result, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(result);
+    }
+  });
+}
+</script>
