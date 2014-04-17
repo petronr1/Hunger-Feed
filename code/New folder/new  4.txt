@@ -1,0 +1,80 @@
+<div class="item active" >
+			<div style="border: 0px; margin: 10px; padding: 2px; width: 100%; height:400; margin-left:120px; margin-right: 120px">
+				<!--<div style="border: 0px; margin: 10px; height: 400px; width: 424px; float: left;">-->
+				<div id="divimagem"> 
+					<img src="img/food1.jpg"/>
+				</div>
+				<div id="divimagem">
+					<img src="img/food1.jpg"/>
+				</div>
+				<div id="divimagem">
+					<img src="img/food1.jpg"/>
+				</div>
+			</div>
+		</div>
+		
+		
+		#contenet {
+                width: 100%;
+                margin: 10px;
+                padding: 2px;
+                overflow: hidden;
+            }
+            .box {
+                width: auto;
+                float: left;
+                margin-right: 25px;
+                overflow: hidden;
+            }
+            .small_box {
+                border: 1px solid green;
+                background: red;
+                width: auto;
+                height: 400px;
+                margin-bottom: 20px;
+            }
+			
+			<div id="contenet">
+				<div class="box">
+					<div class="small_box">
+						<img src="img/food1.jpg"/>
+					</div>
+				</div>
+				<div class="box">
+					<div class="small_box">   
+						<img src="img/food1.jpg"/>
+					</div>
+				</div>
+				<div class="box">
+					<div class="small_box">
+						<img src="img/food1.jpg"/>
+					</div>
+				</div>
+			</div> 
+			
+			<style type="text/css"> 
+				img{ 
+					width:auto; 
+					float:left; 
+					margin: 10px; 
+				} 
+				
+							img{ 
+				max-width: 100%;
+					width:auto; 
+					float:left; 
+					margin: 10px; 
+				} 
+</style> 
+
+<img src="img/food1.jpg" width="370" height="400" /> 
+<img src="img/food1.jpg"/> 
+<img src="img/food1.jpg" />
+
+<div class="container">
+            <div class="carousel-caption">
+              <h1>Example headline.</h1>
+              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <a class="btn btn-large btn-primary" href="#">Sign up today</a>
+            </div>
+          </div>
