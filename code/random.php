@@ -116,23 +116,23 @@ while(mysqli_fetch_array($dishes) != NULL)
       <div class="carousel-inner">
         <div class="item active">
 			<div class="row">
-				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img[(rand(1,n))];?>.jpg" alt="Random Image"/></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(1,n))];?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(1,n))];?>.jpg" /></a></div>
+				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>.jpg" alt="Random Image"/></a></div>
+				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>.jpg" /></a></div>
 			</div>
         </div>
         <div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img[(rand(1,n))];?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(1,n))];?>.jpg"/></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(1,n))];?>.jpg" /></a></div>
+				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>.jpg" /></a></div>
 			</div>
         </div>
         <div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(1,n))];?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(1,n))];?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(1,n))];?>.jpg" /></a></div>
+				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>.jpg" /></a></div>
 			</div>
         </div>
       </div>
