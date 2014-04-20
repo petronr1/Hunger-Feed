@@ -34,8 +34,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 -- Dumping data for table `users`
 INSERT INTO `users` (`userID`, `username`, `password`) VALUES
-(3, 'papabear', '19ab5b345576117c60091c27df896684f259a4dd16a4acc66c829b3a39565cfc'),
-(4, 'aaa', '485012098aa94a2a115382ea6bc6f9838c5d91abe5a64c7ff4d321ec6226df77'),
+(1, 'aaa', '19ab5b345576117c60091c27df896684f259a4dd16a4acc66c829b3a39565cfc'),
+(2, 'aaa', '485012098aa94a2a115382ea6bc6f9838c5d91abe5a64c7ff4d321ec6226df77'),
 (5, 'ddd', 'bce58e68e8ebf51808f9a32199c410f5be898046ef191b320a3a26644db990dd');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

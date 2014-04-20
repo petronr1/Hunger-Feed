@@ -3,15 +3,14 @@
 
 <?php
 $user_name = "root";
-$password = "pass";
+$password = "boomshakalaka";
 $database = "netfoods";
 $server = "127.0.0.1";
 
-$count_italian = 0;
-$count_japanese = 0;
-$count_american = 0;
+$count_italian = -1;
+$count_japanese = -1;
+$count_american = -1;
 
-$img = array();
 
 $con = mysqli_connect($server, $user_name, $password, $database);
 
@@ -25,32 +24,29 @@ $dishes_italian = mysqli_query($con, "SELECT * FROM dish Where type1 = 'Italian'
 $dishes_japanese = mysqli_query($con, "SELECT * FROM dish Where type1 = 'Japanese' OR type2 = 'Japanese'");
 $dishes_american = mysqli_query($con, "SELECT * FROM dish Where type1 = 'American' OR type2 = 'American'");
 
-while(mysqli_fetch_array($dishes_italian) != NULL)
+for($i = 0; $i < mysqli_num_rows($dishes_italian); $i++)
 {
 	
 	$row = mysqli_fetch_array($dishes_italian);
-	$img_italian[$count_italian] = $row['img_path'];
+	$img_italian[$i] = $row['img_path'];
 	$count_italian++;
 	
 }
 
-$count = 0;
-
-while(mysqli_fetch_array($dishes_japanese) != NULL)
+for($i = 0; $i < mysqli_num_rows($dishes_japanese); $i++)
 {
 	
 	$row = mysqli_fetch_array($dishes_japanese);
-	$img_japanese[$count_japanese] = $row['img_path'];
+	$img_japanese[$i] = $row['img_path'];
 	$count_japanese++;
 	
 }
 
-
-while(mysqli_fetch_array($dishes_american) != NULL)
+for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
 {
 	
 	$row = mysqli_fetch_array($dishes_american);
-	$img_american[$count_american] = $row['img_path'];
+	$img_american[$i] = $row['img_path'];
 	$count_american++;
 	
 }
@@ -143,26 +139,26 @@ while(mysqli_fetch_array($dishes_american) != NULL)
         <div class="item active">
 			<div class="row">
 				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="#x" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="#x" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="#x" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="#x" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="#x" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
 			</div>
         </div>
         <div class="item">
 			<div class="row">
-				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-3"><a href="#x" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-3"><a href="#x" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-3"><a href="#x" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
 			</div>
         </div>
         <div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
 			</div>
         </div>
       </div>
@@ -170,6 +166,8 @@ while(mysqli_fetch_array($dishes_american) != NULL)
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
 
+
+<!-- Italian -->
 	<div id="myCarousel2" class="carousel slide">
 	  <ol class="carousel-indicators">
 		<li class="active" data-slide-to="0" data-target="#myCarousel2"></li>
@@ -179,27 +177,27 @@ while(mysqli_fetch_array($dishes_american) != NULL)
       <div class="carousel-inner">
         <div class="item active">
 			<div class="row">
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-2"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-2"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-2"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-2"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-2"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
+				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
 			</div>
         </div>
         <div class="item">
 			<div class="row">
-				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-3"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-3"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-3"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
+				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
 			</div>
         </div>
         <div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
+				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
 			</div>
         </div>
       </div>
@@ -216,27 +214,27 @@ while(mysqli_fetch_array($dishes_american) != NULL)
       <div class="carousel-inner">
         <div class="item active">
 			<div class="row">
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-2"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-2"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-2"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-2"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-2"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
+				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
 			</div>
         </div>
         <div class="item">
 			<div class="row">
-				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-3"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-3"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-3"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
+				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
 			</div>
         </div>
         <div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
+				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
 			</div>
         </div>
       </div>

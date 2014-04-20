@@ -1,35 +1,11 @@
+<?php 
+	include_once("config.php");
+?>
+
+<?php if( !(isset( $_POST['login'] ) ) ) { ?>
+
 <!DOCTYPE html>
 <html lang="en">
-
-<?php
-$user_name = "root";
-$password = "boomshakalaka";
-$database = "netfoods";
-$server = "127.0.0.1";
-
-$count = -1;
-
-$con = mysqli_connect($server, $user_name, $password, $database);
-
-		//CHECK to make sure there is no MySQL database error
-		if (mysqli_connect_errno()) 
-		{
-		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-		}
-
-$dishes = mysqli_query($con, "SELECT * FROM dish");
-
-for($i = 0; $i < mysqli_num_rows($dishes); $i++)
-{
-	
-	$row = mysqli_fetch_array($dishes);
-	$img[$i] = $row['img_path'];
-	$count++;
-	
-}
-
-?>
-  
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,10 +29,33 @@ for($i = 0; $i < mysqli_num_rows($dishes); $i++)
     <![endif]-->
 
     <!-- Custom styles for this template -->
-    <link href="categories.css" rel="stylesheet">
-
+    <link href="home.css" rel="stylesheet">
+	
+	<!--Extra CSS -->
+	<style>
+		.fleft {
+			float:left;
+		}	
+		.introtext {
+			font-size:24px;
+		}
+		.normtext {
+			font-size:20px;
+			float:left;
+		}
+		.normtextnf {
+			font-size:20px;
+		}		
+		.tabletext {
+			font-size:18px;
+		}
+		.headertext {
+			font-size:16px;
+		}		
+	</style>
+	
+	
   </head>
-
 <!-- NAVBAR
 ================================================== -->
   <body>
@@ -72,7 +71,7 @@ for($i = 0; $i < mysqli_num_rows($dishes); $i++)
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Place Picker</a>
+              <a class="navbar-brand" href="#">Netfoods</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
@@ -82,13 +81,8 @@ for($i = 0; $i < mysqli_num_rows($dishes); $i++)
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
+                    <li><a href="#">Past Selections</a></li>
+                    <li><a href="#">Favorite Dishes</a></li>
                   </ul>
                 </li>
               </ul>
@@ -108,35 +102,18 @@ for($i = 0; $i < mysqli_num_rows($dishes); $i++)
       </div>
     </div>
 
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="item active">
-			<div class="row">
-				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>" alt="Random Image"/></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>" /></a></div>
-			</div>
-        </div>
-        <div class="item">
-			<div class="row">
-				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>" /></a></div>
-			</div>
-        </div>
-        <div class="item">
-			<div class="row">
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>" /></a></div>
-			</div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div><!-- /.carousel -->	
+<?php 
+} else {
+	$usr = new Users;
+	$usr->storeFormValues( $_POST );
+	
+	if( $usr->userLogin() ) {
+		echo "Welcome";	
+	} else {
+		echo "Incorrect Username/Password";	
+	}
+}
+?>  
 
     <!-- Marketing messaging and featurettes
     ================================================== -->
@@ -144,12 +121,28 @@ for($i = 0; $i < mysqli_num_rows($dishes); $i++)
 
     <div class="container marketing">
 
+      <!-- Title Page -->
+ 
+		<div align = "center">
+		<img src="img/logo.jpg" class="img-responsive" alt="Generic placeholder thumbnail " height = "400" width = "400">
+        </div> 
+		
+      <table id = 'table1' class='resizable' align = "center">
+		<tr>
+			<th width = "50%"><a href="categories.html"><img src="img/categories.jpg"/></a></th>
+			<th width = "50%"><a href="random.php"><img src="img/random.jpg"/></a></th>
+		</tr>
+		</table>
+	
+		<hr class="featurette-divider">
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Hunger-Feed, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
+
     </div><!-- /.container -->
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

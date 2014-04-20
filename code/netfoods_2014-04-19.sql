@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.15)
 # Database: netfoods
-# Generation Time: 2014-04-19 21:00:26 +0000
+# Generation Time: 2014-04-20 03:05:34 +0000
 # ************************************************************
 
 
@@ -43,18 +43,18 @@ LOCK TABLES `dish` WRITE;
 
 INSERT INTO `dish` (`id`, `dish_name`, `rest_name`, `rest_location`, `type1`, `type2`, `description`, `img_path`, `rating`)
 VALUES
-	(1,'Antipasti','Trattoria Rosa Bianco',NULL,'Itlalian',NULL,NULL,'food/italian/trattoriarosabianca/antipasti',NULL),
-	(2,'Chirashi Bowl','Yummy Sushi',NULL,'Japanese',NULL,NULL,'food/japanese/yummysushi/chirashibowl',NULL),
-	(3,'Lady in Red','Yummy Sushi',NULL,'Japanese',NULL,NULL,'food/japanese/yummysushi/ladyinred',NULL),
-	(5,'Risotto Balls','Trattoria Rosa Bianco',NULL,'Itlalian',NULL,NULL,'food/italian/trattoriarosabianca/risottoballs',NULL),
-	(6,'Sesame Chicken','Yummy Sushi',NULL,'Japanese',NULL,NULL,'food/japanese/yummysushi/sesamechicken',NULL),
-	(9,'Veal Scallopini','Trattoria Rosa Bianco',NULL,'Itlalian',NULL,NULL,'food/italian/trattoriarosabianca/vealscallopini',NULL),
-	(10,'Bacon Cheeseburger','Cheeburger Cheeburger',NULL,'American',NULL,NULL,'food/american/CheeburgerCheeburger/baconcheeseburger',NULL),
-	(11,'Cheeseburger Wrap','Cheeburger Cheeburger',NULL,'American',NULL,NULL,'food/american/CheeburgerCheeburger/cheeseburgerwrap',NULL),
-	(12,'Semi Burger','Cheeburger Cheeburger',NULL,'American',NULL,NULL,'food/american/CheeburgerCheeburger/semiburger',NULL),
-	(13,'Blueberry Pancakes','Cafe 72',NULL,'Brunch',NULL,NULL,'food/brunch/cafe72/blueberrypancakes',NULL),
-	(14,'Crabcake Benedict','Cafe 72',NULL,'Brunch',NULL,NULL,'food/brunch/cafe72/crabcakebenedict',NULL),
-	(15,'Western Omelette','Cafe 72',NULL,'Brunch',NULL,NULL,'food/brunch/cafe72/westernomelette',NULL);
+	(1,'Antipasti','Trattoria Rosa Bianco',NULL,'Italian',NULL,NULL,'food/italian/trattoriarosabianca/antipasti/',NULL),
+	(2,'Chirashi Bowl','Yummy Sushi',NULL,'Japanese',NULL,NULL,'food/japanese/yummysushi/chirashibowl/',NULL),
+	(3,'Lady in Red','Yummy Sushi',NULL,'Japanese',NULL,NULL,'food/japanese/yummysushi/ladyinred/',NULL),
+	(5,'Risotto Balls','Trattoria Rosa Bianco',NULL,'Italian',NULL,NULL,'food/italian/trattoriarosabianca/risottoballs/',NULL),
+	(6,'Sesame Chicken','Yummy Sushi',NULL,'Japanese',NULL,NULL,'food/japanese/yummysushi/sesamechicken/',NULL),
+	(9,'Veal Scallopini','Trattoria Rosa Bianco',NULL,'Italian',NULL,NULL,'food/italian/trattoriarosabianca/vealscallopini/',NULL),
+	(10,'Bacon Cheeseburger','Cheeburger Cheeburger',NULL,'American',NULL,NULL,'food/american/CheeburgerCheeburger/baconcheeseburger/',NULL),
+	(11,'Cheeseburger Wrap','Cheeburger Cheeburger',NULL,'American',NULL,NULL,'food/american/CheeburgerCheeburger/cheeseburgerwrap/',NULL),
+	(12,'Semi Burger','Cheeburger Cheeburger',NULL,'American',NULL,NULL,'food/american/CheeburgerCheeburger/semiburger/',NULL),
+	(13,'Blueberry Pancakes','Cafe 72',NULL,'Brunch',NULL,NULL,'food/brunch/cafe72/blueberrypancakes/',NULL),
+	(14,'Crabcake Benedict','Cafe 72',NULL,'Brunch',NULL,NULL,'food/brunch/cafe72/crabcakebenedict/',NULL),
+	(15,'Western Omelette','Cafe 72',NULL,'Brunch',NULL,NULL,'food/brunch/cafe72/westernomelette/',NULL);
 
 /*!40000 ALTER TABLE `dish` ENABLE KEYS */;
 UNLOCK TABLES;
