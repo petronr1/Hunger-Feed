@@ -28,7 +28,7 @@ for($i = 0; $i < mysqli_num_rows($dishes_italian); $i++)
 {
 	
 	$row = mysqli_fetch_array($dishes_italian);
-	$img_italian[$i] = $row['img_path'];
+	$img_italian[$i] = $row['path'];
 	$count_italian++;
 	
 }
@@ -37,7 +37,7 @@ for($i = 0; $i < mysqli_num_rows($dishes_japanese); $i++)
 {
 	
 	$row = mysqli_fetch_array($dishes_japanese);
-	$img_japanese[$i] = $row['img_path'];
+	$img_japanese[$i] = $row['path'];
 	$count_japanese++;
 	
 }
@@ -46,7 +46,7 @@ for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
 {
 	
 	$row = mysqli_fetch_array($dishes_american);
-	$img_american[$i] = $row['img_path'];
+	$img_american[$i] = $row['path'];
 	$count_american++;
 	
 }
@@ -99,9 +99,9 @@ for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="contact.php">Contact</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                   <ul class="dropdown-menu">
@@ -129,6 +129,7 @@ for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
 
     <!-- Carousel
     ================================================== -->
+    <h3>American</h3>
     <div id="myCarousel" class="carousel slide">
 	  <ol class="carousel-indicators">
 		<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
@@ -138,27 +139,26 @@ for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
       <div class="carousel-inner">
         <div class="item active">
 			<div class="row">
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
 			</div>
         </div>
         <div class="item">
 			<div class="row">
-				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
 			</div>
         </div>
         <div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_american[(rand(0,$count_american))];?><?php echo rand(1,1);?>" /></a></div>
 			</div>
         </div>
       </div>
@@ -168,6 +168,8 @@ for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
 
 
 <!-- Italian -->
+    <h3>Italian</h3>
+
 	<div id="myCarousel2" class="carousel slide">
 	  <ol class="carousel-indicators">
 		<li class="active" data-slide-to="0" data-target="#myCarousel2"></li>
@@ -177,27 +179,26 @@ for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
       <div class="carousel-inner">
         <div class="item active">
 			<div class="row">
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
 			</div>
         </div>
         <div class="item">
 			<div class="row">
-				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
 			</div>
         </div>
         <div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_italian[(rand(0,$count_italian))];?><?php echo rand(1,1);?>" /></a></div>
 			</div>
         </div>
       </div>
@@ -205,6 +206,9 @@ for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
       <a class="right carousel-control" href="#myCarousel2" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
 	
+	
+	<h3>Japanese</h3>
+
 	<div id="myCarousel3" class="carousel slide">
 	  <ol class="carousel-indicators">
 		<li class="active" data-slide-to="0" data-target="#myCarousel3"></li>
@@ -214,27 +218,26 @@ for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
       <div class="carousel-inner">
         <div class="item active">
 			<div class="row">
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
 			</div>
         </div>
         <div class="item">
 			<div class="row">
-				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
 			</div>
         </div>
         <div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
-				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img_japanese[(rand(0,$count_japanese))];?><?php echo rand(1,1);?>" /></a></div>
 			</div>
         </div>
       </div>
@@ -242,6 +245,7 @@ for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
       <a class="right carousel-control" href="#myCarousel3" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
 	
+<!--
 	<div id="myCarousel4" class="carousel slide">
 	  <ol class="carousel-indicators">
 		<li class="active" data-slide-to="0" data-target="#myCarousel4"></li>
@@ -251,7 +255,7 @@ for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
       <div class="carousel-inner">
         <div class="item active">
 			<div class="row">
-				<div class="col-xs-2"><a href="index2.html" class="thumbnail"><img src="img/food1.jpg" /></a></div>
+				<div class="col-xs-2"><a href="food_info.php" class="thumbnail"><img src="img/food1.jpg" /></a></div>
 				<div class="col-xs-2"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
 				<div class="col-xs-2"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
 				<div class="col-xs-2"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
@@ -261,7 +265,7 @@ for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
         </div>
         <div class="item">
 			<div class="row">
-				<div class="col-xs-3"><a href="index2.html" class="thumbnail"><img src="img/food1.jpg" /></a></div>
+				<div class="col-xs-3"><a href="food_info.php" class="thumbnail"><img src="img/food1.jpg" /></a></div>
 				<div class="col-xs-3"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
 				<div class="col-xs-3"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
 				<div class="col-xs-3"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
@@ -277,7 +281,9 @@ for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
       </div>
       <a class="left carousel-control" href="#myCarousel4" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel4" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div><!-- /.carousel -->
+    </div>
+    -->
+    <!-- /.carousel -->
 	
 	
     <!-- Marketing messaging and featurettes

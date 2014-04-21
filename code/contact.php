@@ -1,18 +1,3 @@
-<?php
-$user_name = "root";
-$password = "boomshakalaka";
-$database = "netfoods";
-$server = "127.0.0.1";
-
-$con = mysqli_connect($server, $user_name, $password, $database);
-
-		//CHECK to make sure there is no MySQL database error
-		if (mysqli_connect_errno()) 
-		{
-		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-		}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,32 +23,7 @@ $con = mysqli_connect($server, $user_name, $password, $database);
     <![endif]-->
 
     <!-- Custom styles for this template -->
-    <link href="home.css" rel="stylesheet">
-	
-	<!--Extra CSS -->
-	<style>
-		.fleft {
-			float:left;
-		}	
-		.introtext {
-			font-size:24px;
-		}
-		.normtext {
-			font-size:20px;
-			float:left;
-		}
-		.normtextnf {
-			font-size:20px;
-		}		
-		.tabletext {
-			font-size:18px;
-		}
-		.headertext {
-			font-size:16px;
-		}		
-	</style>
-	
-	
+    <link href="contact.css" rel="stylesheet">
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -84,9 +44,9 @@ $con = mysqli_connect($server, $user_name, $password, $database);
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="home.php">Home</a></li>
+                <li><a href="home.php">Home</a></li>
                 <li><a href="about.php">About</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li class="active"><a href="#">Contact</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                   <ul class="dropdown-menu">
@@ -95,12 +55,12 @@ $con = mysqli_connect($server, $user_name, $password, $database);
                   </ul>
                 </li>
               </ul>
-			  <form class="navbar-form navbar-right" role="form" method="post" action="checklogin.php">
+			  <form class="navbar-form navbar-right" role="form">
 				<div class="form-group">
-					<input name="email1" type="text" placeholder="Email" class="form-control">
+					<input type="text" placeholder="Email" class="form-control">
 				</div>
 				<div class="form-group">
-					<input name="password1" type="password" placeholder="Password" class="form-control">
+					<input type="password" placeholder="Password" class="form-control">
 				</div>
 				<button type="submit" class="btn btn-success">Sign in</button>
 				<p><font color = "ffffff">Don't have an account?</font><a href="signup.html"><font color = "0000ff"><b> Sign up now</b></font></a></p>
@@ -112,26 +72,53 @@ $con = mysqli_connect($server, $user_name, $password, $database);
     </div>
 
 
+    
+
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container marketing">
+	  <hr class="featurette-divider">
 
-      <!-- Title Page -->
- 
-		<div align = "center">
-		<img src="img/logo.jpg" class="img-responsive" alt="Generic placeholder thumbnail " height = "400" width = "400">
-        </div> 
-		
-      <table id = 'table1' class='resizable' align = "center">
-		<tr>
-			<th width = "50%"><a href="categories.php"><img src="img/categories.jpg"/></a></th>
-			<th width = "50%"><a href="random.php"><img src="img/random.jpg"/></a></th>
-		</tr>
-		</table>
-	
-		<hr class="featurette-divider">
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>Chris Borm</h2>
+          <p>Email: borm2@tcnj.edu</p>
+          
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>Pedro Furlanetto</h2>
+          <p>Email: furlanp1@tcnj.edu</p>
+          
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>Jared Milburn</h2>
+          <p>Email: milburj1@tcnj.edu</p>
+       
+        </div><!-- /.col-lg-4 -->
+         <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>Rocco Petrongolo</h2>
+          <p>Email: petronr1@tcnj.edu</p>		
+         
+        </div><!-- /.col-lg-4 -->
+         <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>Warren Smith</h2>
+          <p>Email: smith332@tcnj.edu</p>
+    
+        </div><!-- /.col-lg-4 -->
+        
+      </div><!-- /.row -->
+
+	  <hr class="featurette-divider">
+      
+
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>

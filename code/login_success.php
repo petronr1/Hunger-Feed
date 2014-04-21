@@ -1,3 +1,18 @@
+<?php
+$user_name = "root";
+$password = "boomshakalaka";
+$database = "netfoods";
+$server = "127.0.0.1";
+
+$con = mysqli_connect($server, $user_name, $password, $database);
+
+		//CHECK to make sure there is no MySQL database error
+		if (mysqli_connect_errno()) 
+		{
+		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+		}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -69,9 +84,9 @@
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li class="active"><a href="home.php">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="contact.php">Contact</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                   <ul class="dropdown-menu">
@@ -80,12 +95,12 @@
                   </ul>
                 </li>
               </ul>
-			  <form class="navbar-form navbar-right" role="form">
+			  <form class="navbar-form navbar-right" role="form" method="post" action="checklogin.php">
 				<div class="form-group">
-					<input type="text" placeholder="Email" class="form-control">
+					<input name="email1" type="text" placeholder="Email" class="form-control">
 				</div>
 				<div class="form-group">
-					<input type="password" placeholder="Password" class="form-control">
+					<input name="password1" type="password" placeholder="Password" class="form-control">
 				</div>
 				<button type="submit" class="btn btn-success">Sign in</button>
 				<p><font color = "ffffff">Don't have an account?</font><a href="signup.html"><font color = "0000ff"><b> Sign up now</b></font></a></p>
@@ -97,8 +112,6 @@
     </div>
 
 
-    
-
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
@@ -107,6 +120,7 @@
 
       <!-- Title Page -->
  
+ <h1>Login Successful</h1>
 		<div align = "center">
 		<img src="img/logo.jpg" class="img-responsive" alt="Generic placeholder thumbnail " height = "400" width = "400">
         </div> 
@@ -136,3 +150,20 @@
     <script src="../assets/js/docs.min.js"></script>
   </body>
 </html>
+
+<?php
+
+function session_is_registered($user)
+{
+    if (isset($_SESSION['$user']))
+   		return true;
+    else 
+    	return false;
+}
+?>
+
+<!-- 
+ 
+<?php header("location:home.php"); ?>
+ 
+ -->

@@ -23,8 +23,7 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
-    <link href="random.css" rel="stylesheet">
-	
+    <link href="about.css" rel="stylesheet">
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -41,13 +40,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Netfoods</a>
+              <a class="navbar-brand" >Netfoods</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="home.php">Home</a></li>
+                <li class="active"><a href="#">About</a></li>
+                <li><a href="contact.php">Contact</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                   <ul class="dropdown-menu">
@@ -73,56 +72,33 @@
     </div>
 
 
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide">
-	  <ol class="carousel-indicators">
-		<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
-		<li class="" data-slide-to="1" data-target="#myCarousel"></li>
-		<li class="" data-slide-to="2" data-target="#myCarousel"></li>
-	  </ol>
-      <div class="carousel-inner">
-        <div class="item active">
-			<div class="row">
-				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-			</div>
+
+      <!-- START THE FEATURETTES -->
+	<div class="container marketing">
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Place Picker <span class="text-muted">Making up your mind for you.</span></h2>
+          <p class="lead">We've taken out the headache of trying to decide where to eat when nothing sounds good. Instead, let your eyes decide!</p>
         </div>
-        <div class="item">
-			<div class="row">
-				<div class="col-xs-4"><a href="index2.html" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-			</div>
-        </div>
-        <div class="item">
-			<div class="row">
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-				<div class="col-xs-4"><a href="#x" class="thumbnail"><img src="img/food1.jpg" /></a></div>
-			</div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="img/logo.jpg" alt="Generic placeholder image">
         </div>
       </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div><!-- /.carousel -->
 
-	
-	
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
+      <hr class="featurette-divider">
 
-    <div class="container marketing">
+
+      <!-- /END THE FEATURETTES -->
+
 
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
-
-    </div><!-- /.container -->
+	  </div>
 
 
     <!-- Bootstrap core JavaScript
