@@ -103,11 +103,11 @@ $con = mysqli_connect($server, $user_name, $password, $database);
 		<form method="post" role="form" action="signup.php">
 			<div class="form-group">
 				<label for="inputLastName">Last Name</label>
-				<input name="LastName" class="form-control" id="inputLastName" placeholder="Enter last name">
+				<input name="lastName" class="form-control" id="inputLastName" placeholder="Enter last name">
 			</div>
 			<div class="form-group">
 				<label for="inputFirstName">First Name</label>
-				<input name="FirstName" class="form-control" id="inputFirstName" placeholder="Enter first name">
+				<input name="firstName" class="form-control" id="inputFirstName" placeholder="Enter first name">
 			</div>
 			<!--<div class="form-group">
 				<label for="inputUsername">Username</label>
@@ -118,16 +118,16 @@ $con = mysqli_connect($server, $user_name, $password, $database);
 				<input name="email" type="email" class="form-control" id="inputEmail" placeholder="Enter email">
 			</div>
 			<div class="form-group">
-				<label for="inputPassword">Password</label>
-				<input name="email" type="password" class="form-control" id="inputPassword" placeholder="Password">
+				<label for="inputPassword">Password (6 Numbers)</label>
+				<input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
 			</div>
 			<div class="form-group">
 				<label for="inputConfirmPassword">Confirm your password</label>
-				<input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm your password">
+				<input name="confPassword" type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm your password">
 			</div>
 			<div class="form-group">
 				<label for="inputFile">Choose your picture</label>
-				<input type="file" id="inputFile">
+				<input name="picture" type="file" id="inputFile">
 				<p class="help-block">*jpeg, jpg, png</p>
 			</div>
 			<button type="submit" class="btn btn-default">Submit</button>

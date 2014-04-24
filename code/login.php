@@ -12,17 +12,17 @@ $con = mysqli_connect($server, $user_name, $password, $database);
 		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		}
 
-$email=$_POST['email']; 
-$signin=$_POST['signin'];
-$password=$_POST['password']; 
-//$password=MD5($_POST['password']);
+$email=		$_POST['email']; 
+$signin=	$_POST['signin'];
+//$password=	$_POST['password']; 
+$password=	MD5($_POST['password']);
 
 //$email = stripslashes($email);
 //$password = stripslashes($password);
 // $email = mysql_real_escape_string($email);
 // $password = mysql_real_escape_string($password);
-echo $email . "\n";
-echo $password;
+//echo $email . "\n";
+//echo $password;
 
 if(isset($signin)) {
 
@@ -31,12 +31,15 @@ if(isset($signin)) {
 	// var_dump($result);
 	$count=mysqli_num_rows($result);
 	//echo $count;
-	echo $count;
 
 	// If result matched $myusername and $mypassword, table row must be 1 row
 	if($count==1){
 		setcookie("email",$email);
 		header("location:home.php");
+		//echo "teste \n";
+		//echo $sql;
+		//echo $result['email'];
+		//print_r ($result);
 		
 	}else {
 		echo"<script language='javascript' type='text/javascript'>alert('Login and/or password wrong');window.location.href='home.php';</script>";
