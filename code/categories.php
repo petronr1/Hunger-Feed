@@ -28,7 +28,7 @@ for($i = 0; $i < mysqli_num_rows($dishes_italian); $i++)
 {
 	
 	$row = mysqli_fetch_array($dishes_italian);
-	$img_italian[$i] = $row['path'];
+	$img_italian[$i] = $row['img_path'];
 	$count_italian++;
 	
 }
@@ -37,7 +37,7 @@ for($i = 0; $i < mysqli_num_rows($dishes_japanese); $i++)
 {
 	
 	$row = mysqli_fetch_array($dishes_japanese);
-	$img_japanese[$i] = $row['path'];
+	$img_japanese[$i] = $row['img_path'];
 	$count_japanese++;
 	
 }
@@ -46,7 +46,7 @@ for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
 {
 	
 	$row = mysqli_fetch_array($dishes_american);
-	$img_american[$i] = $row['path'];
+	$img_american[$i] = $row['img_path'];
 	$count_american++;
 	
 }
