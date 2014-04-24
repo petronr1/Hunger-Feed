@@ -2,18 +2,18 @@
 <html lang="en">
 
 <?php
-$user_name = "root";
-$password = "boomshakalaka";
-$database = "netfoods";
+$user_name = "student5";
+$password = "tOiTvwxpsM";
+$database = "student5";
 $server = "127.0.0.1";
 
-// $con = mysqli_connect($server, $user_name, $password, $database);
-// 
-// 		//CHECK to make sure there is no MySQL database error
-// 		if (mysqli_connect_errno()) 
-// 		{
-// 		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-// 		}
+ $con = mysqli_connect($server, $user_name, $password, $database);
+
+ 		//CHECK to make sure there is no MySQL database error
+ 		if (mysqli_connect_errno()) 
+ 		{
+		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ 		}
 // 
 // $dishes_american = mysqli_query($con, "SELECT * FROM dish Where type1 = 'American' OR type2 = 'American'");
 // 
@@ -22,6 +22,8 @@ $server = "127.0.0.1";
 // 	$row = mysqli_fetch_array($dishes_ammerican);
 // 	$img_italian[$i] = $row['img_path'];
 // }
+
+    $info = $_GET['info'];
 ?>
 
 
@@ -94,46 +96,69 @@ $server = "127.0.0.1";
                 <li><a href="home.php">Home</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
-				<li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">My NetFoods <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="past_selections.html">Past Selections</a></li>
-                    <li><a href="fav_dishes.html">Favorite Dishes</a></li>
-                  </ul>
-                </li>
-			  </ul>
-			  <form class="navbar-form navbar-right" role="form">
+				<?php  
+			    $email_cookie = $_COOKIE['email'];
+				if(isset($email_cookie)){
+					echo '<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Past Selections</a></li>
+								<li><a href="#">Favorite Dishes</a></li>
+							</ul>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-right" role="form" method="post" action="logout.php">
+					<button name="logout" type="submit" class="btn btn-success">Log Out</button>
+					</form>';
+				
+				
+				} else {
+				echo '</ul>
+					<form class="navbar-form navbar-right" role="form" method="post" action="login.php">
 				<div class="form-group">
-					<input type="text" placeholder="Email" class="form-control">
+					<input name="email" type="text" placeholder="Email" class="form-control">
 				</div>
 				<div class="form-group">
-					<input type="password" placeholder="Password" class="form-control">
+					<input name="password" type="password" placeholder="Password" class="form-control">
 				</div>
-				<button type="submit" class="btn btn-success">Sign in</button>
-				<p><font color = "ffffff">Don't have an account?</font><a href="signup.html"><font color = "0000ff"><b> Sign up now</b></font></a></p>
-			  </form>
+				<button name="signin" type="submit" class="btn btn-success">Sign in</button>
+				<p><font color = "ffffff">Don\'t have an account?</font><a href="signup_form.php"><font color = "0000ff"><b> Sign up now</b></font></a></p>
+			  </form>';
+				}
+			  ?>
 			</div>
           </div>
         </div>
       </div>
     </div>
 
-
+	
     <!-- ================================================== -->
-
+	
+	<?php
+		$sql=("SELECT * FROM dish WHERE id='$info'");
+		//$sql = ("SELECT `email` FROM `profile` WHERE `email` like '$email'");
+		$result= mysqli_query($con, $sql);
+		$array = mysqli_fetch_array($result);
+		//$logarray = $array['info'];
+		//print_r($logarray);
+			
+	?>
+	
     <div class="container marketing">
 
 		<!-- Past Selections Page -->
 		<br><br><br>
 		
 		<hr class="featurette-divider">
+		
 	
 	<div class="container marketing">
 		<hr class="featurette-divider">
 
 		<div class="row featurette">
 			<div class="col-md-7">
-				<h2 class="featurette-heading">** Name of food goes here ** </h2>
+				<h2 class="featurette-heading"><?php echo $array['rest_name'] ?> </h2>
 				<br><br>
 				<img class="img" data-src="holder.js/140x140" alt="Generic placeholder image">
 				<p>** Image goes here **</p>
@@ -166,6 +191,7 @@ $server = "127.0.0.1";
 			</div>
 			<div class = "directions">	
 			<br><br>
+			
 			<head>
 				<style>
 				  html, body, #map-canvas {

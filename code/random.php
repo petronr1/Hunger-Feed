@@ -23,6 +23,7 @@ for($i = 0; $i < mysqli_num_rows($dishes); $i++)
 {
 	
 	$row = mysqli_fetch_array($dishes);
+	$id[$i] = $row['id'];
 	$img[$i] = $row['img_path'];
 	$count++;
 	
@@ -118,26 +119,40 @@ for($i = 0; $i < mysqli_num_rows($dishes); $i++)
     <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide">
+		<ol class="carousel-indicators">
+			<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+			<li class="" data-slide-to="1" data-target="#myCarousel"></li>
+			<li class="" data-slide-to="2" data-target="#myCarousel"></li>
+		</ol>
       <div class="carousel-inner">
         <div class="item active">
 			<div class="row">
-				<div class="col-xs-4"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>.jpg" alt="Random Image"/></a></div>
-				<div class="col-xs-4"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
 			</div>
         </div>
         <div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
 			</div>
         </div>
         <div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php" class="thumbnail"><img src="<?php echo $img[(rand(0,$count))];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
 			</div>
         </div>
       </div>
