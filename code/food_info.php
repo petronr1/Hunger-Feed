@@ -1,20 +1,30 @@
-<?php
-$user_name = "student5";
-$password = "tOiTvwxpsM";
-$database = "student5";
-$server = "127.0.0.1";
-
-$con = mysqli_connect($server, $user_name, $password, $database);
-
-		//CHECK to make sure there is no MySQL database error
-		if (mysqli_connect_errno()) 
-		{
-		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-		}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+
+<?php
+$user_name = "root";
+$password = "boomshakalaka";
+$database = "netfoods";
+$server = "127.0.0.1";
+
+// $con = mysqli_connect($server, $user_name, $password, $database);
+// 
+// 		//CHECK to make sure there is no MySQL database error
+// 		if (mysqli_connect_errno()) 
+// 		{
+// 		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+// 		}
+// 
+// $dishes_american = mysqli_query($con, "SELECT * FROM dish Where type1 = 'American' OR type2 = 'American'");
+// 
+// for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
+// {
+// 	$row = mysqli_fetch_array($dishes_ammerican);
+// 	$img_italian[$i] = $row['img_path'];
+// }
+?>
+
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -84,36 +94,24 @@ $con = mysqli_connect($server, $user_name, $password, $database);
                 <li><a href="home.php">Home</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
-				<?php  
-			    $email_cookie = $_COOKIE['email'];
-				if(isset($email_cookie)){
-					echo '<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Past Selections</a></li>
-								<li><a href="#">Favorite Dishes</a></li>
-							</ul>
-						</li>
-					</ul>
-					<form class="navbar-form navbar-right" role="form" method="post" action="logout.php">
-					<button name="logout" type="submit" class="btn btn-success">Log Out</button>
-					</form>';
-				
-				
-				} else {
-				echo '</ul>
-					<form class="navbar-form navbar-right" role="form" method="post" action="login.php">
+				<li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">My NetFoods <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="past_selections.html">Past Selections</a></li>
+                    <li><a href="fav_dishes.html">Favorite Dishes</a></li>
+                  </ul>
+                </li>
+			  </ul>
+			  <form class="navbar-form navbar-right" role="form">
 				<div class="form-group">
-					<input name="email" type="text" placeholder="Email" class="form-control">
+					<input type="text" placeholder="Email" class="form-control">
 				</div>
 				<div class="form-group">
-					<input name="password" type="password" placeholder="Password" class="form-control">
+					<input type="password" placeholder="Password" class="form-control">
 				</div>
-				<button name="signin" type="submit" class="btn btn-success">Sign in</button>
-				<p><font color = "ffffff">Don\'t have an account?</font><a href="signup_form.php"><font color = "0000ff"><b> Sign up now</b></font></a></p>
-			  </form>';
-				}
-			  ?>
+				<button type="submit" class="btn btn-success">Sign in</button>
+				<p><font color = "ffffff">Don't have an account?</font><a href="signup.html"><font color = "0000ff"><b> Sign up now</b></font></a></p>
+			  </form>
 			</div>
           </div>
         </div>
@@ -135,15 +133,39 @@ $con = mysqli_connect($server, $user_name, $password, $database);
 
 		<div class="row featurette">
 			<div class="col-md-7">
-				<h2 class="featurette-heading">Name of food goes here: </h2>
+				<h2 class="featurette-heading">** Name of food goes here ** </h2>
 				<br><br>
-				
 				<img class="img" data-src="holder.js/140x140" alt="Generic placeholder image">
-				<p>Image goes here...</p>
-			
+				<p>** Image goes here **</p>
 			</div>
 			
-		<div class = "directions">	
+			
+			<div class="col-md-7">
+			<h2> Ratings: </h2>
+			<div id="13980968631035" class="wE"><script src="http://widget-engine.com/w:0:003:13980968631035:1:FF0000:40" type="text/javascript"></script></div>
+			<br><br>
+			</div>
+			
+			
+			<div class="col-md-7">
+			<h2> Description: </h2>
+			
+			<p> ** Description goes here ** </p>
+			<br><br>
+			</div>
+			
+			<div class="col-md-7">
+			<h2> Comments: </h2>
+			<!-- Begin Comments JavaScript Code -->
+			<script type="text/javascript" async>(function(){document.write('<div id="fcs_div"><a title="free comment script" href="http://www.freecommentscript.com">&nbsp;&nbsp;<b>Free HTML User Comments</b>...</a></div>');fcs_53596d5108bfd=document.createElement('script');fcs_53596d5108bfd.type="text/javascript";fcs_53596d5108bfd.src="http://www.freecommentscript.com/GetComments.php?p=53596d5108bfd&s=" + escape(window.location) + "&Width=510&FontColor=111111&BackgroundColor=FFFFFF&FontSize=11&Size=10";setTimeout("document.getElementById('fcs_div').appendChild(fcs_53596d5108bfd)",1);})();</script><noscript><div></div></noscript>
+			<!-- End Comments JavaScript Code -->
+			</div>
+		
+			<div class="col-md-7">
+			<h2> Directions: </h2>
+			</div>
+			<div class = "directions">	
+			<br><br>
 			<head>
 				<style>
 				  html, body, #map-canvas {
@@ -238,7 +260,7 @@ $con = mysqli_connect($server, $user_name, $password, $database);
 			google.maps.event.addDomListener(window, 'load', initialize);
 
 			</script>
-			  </head>
+			</head>
 
 			  <body>
   
@@ -263,12 +285,9 @@ $con = mysqli_connect($server, $user_name, $password, $database);
 			  
 			</div>	
 			
-			</br></br>
-			<div id="13980968631035" class="wE"><script src="http://widget-engine.com/w:0:003:13980968631035:1:FF0000:40" type="text/javascript"></script><a href="http://widget-engine.com/ratingcode.php" class="wE">.</a></div>
-	
 		</div>
 
-		<br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br>
 		
       <hr class="featurette-divider">
       
