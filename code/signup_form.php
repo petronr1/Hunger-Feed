@@ -28,6 +28,9 @@ $con = mysqli_connect($server, $user_name, $password, $database);
     <!-- Bootstrap core CSS -->
     <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Custom styles for this template -->
+    <link href="signup.css" rel="stylesheet">
+
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -36,14 +39,11 @@ $con = mysqli_connect($server, $user_name, $password, $database);
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <!-- Custom styles for this template -->
-    <link href="about.css" rel="stylesheet">
   </head>
-<!-- NAVBAR
-================================================== -->
+
   <body>
-    <div class="navbar-wrapper">
+  
+  <div class="navbar-wrapper">
       <div class="container">
 
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -55,14 +55,14 @@ $con = mysqli_connect($server, $user_name, $password, $database);
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" >Netfoods</a>
+              <a class="navbar-brand" href="#">Netfoods</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li><a href="home.php">Home</a></li>
-                <li class="active"><a href="#">About</a></li>
+                <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
-                <?php  
+              <?php  
 			    $email_cookie = $_COOKIE['email'];
 				if(isset($email_cookie)){
 					echo '<li class="dropdown">
@@ -98,41 +98,49 @@ $con = mysqli_connect($server, $user_name, $password, $database);
       </div>
     </div>
 
+    <div class="container">
+
+		<form method="post" role="form" action="signup.php">
+			<div class="form-group">
+				<label for="inputLastName">Last Name</label>
+				<input name="LastName" class="form-control" id="inputLastName" placeholder="Enter last name">
+			</div>
+			<div class="form-group">
+				<label for="inputFirstName">First Name</label>
+				<input name="FirstName" class="form-control" id="inputFirstName" placeholder="Enter first name">
+			</div>
+			<!--<div class="form-group">
+				<label for="inputUsername">Username</label>
+				<input type="username" class="form-control" id="inputUsername" placeholder="Enter username">
+			</div>-->
+			<div class="form-group">
+				<label for="inputEmail">Email address</label>
+				<input name="email" type="email" class="form-control" id="inputEmail" placeholder="Enter email">
+			</div>
+			<div class="form-group">
+				<label for="inputPassword">Password</label>
+				<input name="email" type="password" class="form-control" id="inputPassword" placeholder="Password">
+			</div>
+			<div class="form-group">
+				<label for="inputConfirmPassword">Confirm your password</label>
+				<input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm your password">
+			</div>
+			<div class="form-group">
+				<label for="inputFile">Choose your picture</label>
+				<input type="file" id="inputFile">
+				<p class="help-block">*jpeg, jpg, png</p>
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
 
 
-      <!-- START THE FEATURETTES -->
-	<div class="container marketing">
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Place Picker <span class="text-muted">Making up your mind for you.</span></h2>
-          <p class="lead">We've taken out the headache of trying to decide where to eat when nothing sounds good. Instead, let your eyes decide!</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="img/logo.jpg" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-
-      <!-- /END THE FEATURETTES -->
-
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
-	  </div>
-
+    </div> <!-- /container -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="../dist/js/bootstrap.min.js"></script>
-    <script src="../assets/js/docs.min.js"></script>
+	<script src="../assets/js/docs.min.js"></script>
   </body>
 </html>
