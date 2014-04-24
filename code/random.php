@@ -23,7 +23,7 @@ for($i = 0; $i < mysqli_num_rows($dishes); $i++)
 {
 	
 	$row = mysqli_fetch_array($dishes);
-	$img[$i] = $row['path'];
+	$img[$i] = $row['img_path'];
 	$count++;
 	
 }
