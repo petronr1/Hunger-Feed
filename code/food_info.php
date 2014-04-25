@@ -1,32 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <?php
 $user_name = "student5";
 $password = "tOiTvwxpsM";
 $database = "student5";
 $server = "127.0.0.1";
 
- $con = mysqli_connect($server, $user_name, $password, $database);
+$con = mysqli_connect($server, $user_name, $password, $database);
 
- 		//CHECK to make sure there is no MySQL database error
- 		if (mysqli_connect_errno()) 
- 		{
+		//CHECK to make sure there is no MySQL database error
+		if (mysqli_connect_errno()) 
+		{
 		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
- 		}
-// 
-// $dishes_american = mysqli_query($con, "SELECT * FROM dish Where type1 = 'American' OR type2 = 'American'");
-// 
-// for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
-// {
-// 	$row = mysqli_fetch_array($dishes_ammerican);
-// 	$img_italian[$i] = $row['img_path'];
-// }
-
-    $info = $_GET['info'];
+		}
 ?>
 
-
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -132,66 +120,58 @@ $server = "127.0.0.1";
       </div>
     </div>
 
-	
+
     <!-- ================================================== -->
-	
-	<?php
-		$sql=("SELECT * FROM dish WHERE id='$info'");
-		//$sql = ("SELECT `email` FROM `profile` WHERE `email` like '$email'");
-		$result= mysqli_query($con, $sql);
-		$array = mysqli_fetch_array($result);
-		//$logarray = $array['info'];
-		//print_r($logarray);
-			
-	?>
-	
+
     <div class="container marketing">
 
 		<!-- Past Selections Page -->
 		<br><br><br>
 		
 		<hr class="featurette-divider">
-		
 	
 	<div class="container marketing">
 		<hr class="featurette-divider">
 
 		<div class="row featurette">
-			<div class="col-md-7">
-				<h2 class="featurette-heading"><?php echo $array['rest_name'] ?> </h2>
-				<br><br>
-				<img class="img" data-src="holder.js/140x140" alt="Generic placeholder image">
-				<p>** Image goes here **</p>
-			</div>
-			
-			
-			<div class="col-md-7">
-			<h2> Ratings: </h2>
-			<div id="13980968631035" class="wE"><script src="http://widget-engine.com/w:0:003:13980968631035:1:FF0000:40" type="text/javascript"></script></div>
-			<br><br>
-			</div>
-			
-			
-			<div class="col-md-7">
-			<h2> Description: </h2>
-			
-			<p> ** Description goes here ** </p>
-			<br><br>
-			</div>
-			
-			<div class="col-md-7">
-			<h2> Comments: </h2>
-			<!-- Begin Comments JavaScript Code -->
-			<script type="text/javascript" async>(function(){document.write('<div id="fcs_div"><a title="free comment script" href="http://www.freecommentscript.com">&nbsp;&nbsp;<b>Free HTML User Comments</b>...</a></div>');fcs_53596d5108bfd=document.createElement('script');fcs_53596d5108bfd.type="text/javascript";fcs_53596d5108bfd.src="http://www.freecommentscript.com/GetComments.php?p=53596d5108bfd&s=" + escape(window.location) + "&Width=510&FontColor=111111&BackgroundColor=FFFFFF&FontSize=11&Size=10";setTimeout("document.getElementById('fcs_div').appendChild(fcs_53596d5108bfd)",1);})();</script><noscript><div></div></noscript>
-			<!-- End Comments JavaScript Code -->
-			</div>
 		
 			<div class="col-md-7">
-			<h2> Directions: </h2>
-			</div>
-			<div class = "directions">	
-			<br><br>
+				<h2 class="featurette-heading"> 
+				<!--get info from database to use including dish, rest name, rest location
+				 picture path and add 1.jpg, so it's always showing the same image atm-->
+				<?php
+	
+				$id = $_GET['info'];
+				$img;
 			
+				$result = mysqli_query($con,"SELECT * FROM dish WHERE id = '$id'");
+
+				while($row = mysqli_fetch_array($result)) {
+					$name = $row['dish_name'];
+					echo $name;
+					$rest_name = $row['rest_name'];
+					$res_loc = $row['rest_location'];
+					$descrip = $row['description'];
+					$img = $row['img_path'];
+					$img =(string)$img."1.jpg";
+    				echo "<br>";
+					}
+
+				?></h2>
+				<br><br>
+								
+				<h3>
+					<p>Restaurant: <?php echo $rest_name?><p>
+					<p>Location: <?php echo $rest_loc?><p>
+				</h3>
+				
+				<img class="img" src= "<?php echo $img; ?>" alt="Generic placeholder image">
+				<h4>
+				<p>Description: <?php echo $descrip?><p>
+				</h4?>		
+			</div>
+			
+		<div class = "directions">	
 			<head>
 				<style>
 				  html, body, #map-canvas {
@@ -286,7 +266,7 @@ $server = "127.0.0.1";
 			google.maps.event.addDomListener(window, 'load', initialize);
 
 			</script>
-			</head>
+			  </head>
 
 			  <body>
   
@@ -311,9 +291,12 @@ $server = "127.0.0.1";
 			  
 			</div>	
 			
+			</br></br>
+			<div id="13980968631035" class="wE"><script src="http://widget-engine.com/w:0:003:13980968631035:1:FF0000:40" type="text/javascript"></script><a href="http://widget-engine.com/ratingcode.php" class="wE">.</a></div>
+	
 		</div>
 
-		<br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br>
 		
       <hr class="featurette-divider">
       
