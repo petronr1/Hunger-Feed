@@ -24,6 +24,22 @@ $server = "127.0.0.1";
 // }
 
     $info = $_GET['info'];
+	$email_cookie = $_COOKIE['email'];
+	$mode = $_GET['mode'];
+	if ($mode == "vote") {
+		$cookie = "dish.$id";
+		if(isset($_COOKIE[$cookie])) {
+			//Echo "Sorry You have already ranked that food <p>";
+		}
+		else { 
+			$month = 2592000 + time(); 
+			setcookie(dish.$id, Voted, $month);
+			$voted = $_GET['voted'];
+			$query = ("UPDATE dish SET total = total+'$voted', votes = votes+1 WHERE id = '$info'");
+			mysqli_query ($con, $query); 
+			//Echo "Your vote has been cast <p>"; 
+		}
+	}
 ?>
 
 
@@ -97,7 +113,6 @@ $server = "127.0.0.1";
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
 				<?php  
-			    $email_cookie = $_COOKIE['email'];
 				if(isset($email_cookie)){
 					echo '<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -160,14 +175,55 @@ $server = "127.0.0.1";
 			<div class="col-md-7">
 				<h2 class="featurette-heading"><?php echo $array['rest_name'] ?> </h2>
 				<br><br>
-				<img class="img" data-src="holder.js/140x140" alt="Generic placeholder image">
+				<div>
+				<!--<img class="img" data-src="holder.js/140x140" alt="Generic placeholder image">-->
+				<?php
+					//$dish_info = mysqli_query($con, "SELECT * FROM dish WHERE id='$info'");
+					//$row = mysqli_fetch_array($dish_info);
+					//$img = $row['img_path'];
+					//var_dump($img);
+				?>
+				<img src="<?php echo $array['img_path'];?>1.jpg" width=140 height=140/></a></div>
 				<p>** Image goes here **</p>
+				</div>
 			</div>
 			
 			
 			<div class="col-md-7">
 			<h2> Ratings: </h2>
-			<div id="13980968631035" class="wE"><script src="http://widget-engine.com/w:0:003:13980968631035:1:FF0000:40" type="text/javascript"></script></div>
+			<!--<div id="13980968631035" class="wE">-->
+				<?php
+					if(isset($email_cookie)){
+						if($array['total'] > 0 && $array['votes'] > 0) {
+							$current = $array['total'] / $array['votes'];
+						}else {
+							$current=0;
+						}
+						echo "Current Rating: " . round($current, 1) . " (" . $array['votes'] . " votes) <br>";
+						echo "Rank Me: ";
+						//echo "<a href=".$_SERVER['PHP_SELF']."?info=".$info."
+						echo "<a href=".$_SERVER['PHP_SELF']."?mode=vote&voted=1&info=".$info.">Vote 1</a> | ";
+						//$mode = $_GET['mode']; 
+						//var_dump ($mode);
+						//var_dump ($info);
+						//var_dump($array['total']);
+						//var_dump($array['votes']);
+						//var_dump($current);
+						echo "<a href=".$_SERVER['PHP_SELF']."?mode=vote&voted=2&info=".$info.">Vote 2</a> | ";
+						echo "<a href=".$_SERVER['PHP_SELF']."?mode=vote&voted=3&info=".$info.">Vote 3</a> | ";
+						echo "<a href=".$_SERVER['PHP_SELF']."?mode=vote&voted=4&info=".$info.">Vote 4</a> | ";
+						echo "<a href=".$_SERVER['PHP_SELF']."?mode=vote&voted=5&info=".$info.">Vote 5</a> | ";
+						//$mode = $_GET['mode'];
+					} else {
+						if($array['total'] > 0 && $array['votes'] > 0) {
+							$current = $array['total'] / $array['votes'];
+						}else {
+							$current=0;
+						}
+						echo "Current Rating: " . round($current, 1) . " (" . $array['votes'] . " votes) <br>";
+					}
+				?>
+			<!--</div>-->
 			<br><br>
 			</div>
 			
