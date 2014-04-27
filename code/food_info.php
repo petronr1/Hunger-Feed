@@ -40,6 +40,8 @@ $server = "127.0.0.1";
 			//Echo "Your vote has been cast <p>"; 
 		}
 	}
+
+	
 ?>
 
 
@@ -50,6 +52,8 @@ $server = "127.0.0.1";
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="../assets/ico/food.ico">
+
+
 
     <title>Netfoods</title>
 
@@ -173,7 +177,7 @@ $server = "127.0.0.1";
 
 		<div class="row featurette">
 			<div class="col-md-7">
-				<h2 class="featurette-heading"><?php echo $array['rest_name'] ?> </h2>
+				<h2 class="featurette-heading"><?php echo $array['dish_name'] . " - " .$array['rest_name'] ?> </h2>
 				<br><br>
 				<div>
 				<!--<img class="img" data-src="holder.js/140x140" alt="Generic placeholder image">-->
@@ -183,8 +187,33 @@ $server = "127.0.0.1";
 					//$img = $row['img_path'];
 					//var_dump($img);
 				?>
-				<img src="<?php echo $array['img_path'];?>1.jpg" width=140 height=140/></a></div>
-				<p>** Image goes here **</p>
+				<img src="<?php echo $array['img_path'];?>1.jpg" width=270 height=270/></a></div>
+				</br>
+				<form method="POST" name="favorite" action="food_info.php?info=<?php echo $info;?>">
+					<button type="submit" name="future" class="btn btn-success">Save it for later!</button>
+					<button type="submit" name="past" class="btn btn-success">I already ate this!</button>
+				</form>
+				
+				<?php
+					$dishInfo = $info;
+					$i = 1;
+					$newfav = 'f' . strval($i);
+// 					echo $newfav;
+					if(isset($_POST['future']))
+					{
+						mysqli_query($con, "UPDATE profile SET favorite_dishes = '".$dishInfo."' WHERE email='".$email_cookie."'");
+						mysqli_query($con, "ALTER TABLE profile SET fav1 VARCHAR(255) DEFAULT NULL");
+
+						echo "You can save it for later!";
+					}
+
+					if(isset($_POST['past']))
+					{
+						mysqli_query($con, "UPDATE profile SET past_dishes = '$dishInfo' WHERE email='".$email_cookie."'");
+						echo "Hope it was good!";
+					}
+
+				?>
 				</div>
 			</div>
 			
@@ -377,7 +406,7 @@ $server = "127.0.0.1";
 	  <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2014 Hunger-Feed, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 
     </div> <!-- /.container -->

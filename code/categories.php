@@ -54,8 +54,8 @@ for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
 	
 }
 
-
 ?>
+
 
   <head>
     <meta charset="utf-8">
@@ -171,7 +171,7 @@ for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
         </div>
         <div class="item">
 			<div class="row">
-<div class="col-xs-3"><?php $var= (rand(1,$count_american));?><a href="food_info.php?info=<?php echo $id_american[$var]?>" class="thumbnail"><img src="<?php echo $img_american[($var)]; ?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-3"><?php $var= (rand(1,$count_american));?><a href="food_info.php?info=<?php echo $id_american[$var]?>" class="thumbnail"><img src="<?php echo $img_american[($var)]; ?><?php echo rand(1,1);?>.jpg" /></a></div>
 				<div class="col-xs-3"><?php $var= (rand(1,$count_american));?><a href="food_info.php?info=<?php echo $id_american[$var]?>" class="thumbnail"><img src="<?php echo $img_american[($var)]; ?><?php echo rand(1,1);?>.jpg" /></a></div>
 				<div class="col-xs-3"><?php $var= (rand(1,$count_american));?><a href="food_info.php?info=<?php echo $id_american[$var]?>" class="thumbnail"><img src="<?php echo $img_american[($var)]; ?><?php echo rand(1,1);?>.jpg" /></a></div>
 				<div class="col-xs-3"><?php $var= (rand(1,$count_american));?><a href="food_info.php?info=<?php echo $id_american[$var]?>" class="thumbnail"><img src="<?php echo $img_american[($var)]; ?><?php echo rand(1,1);?>.jpg" /></a></div>
