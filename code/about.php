@@ -40,8 +40,8 @@ $con = mysqli_connect($server, $user_name, $password, $database);
     <!-- Custom styles for this template -->
     <link href="about.css" rel="stylesheet">
   </head>
-<!-- NAVBAR
-================================================== -->
+  
+<!-- NAVBAR ================================================== -->
   <body>
     <div class="navbar-wrapper">
       <div class="container">
@@ -100,30 +100,29 @@ $con = mysqli_connect($server, $user_name, $password, $database);
 
 
 
-      <!-- START THE FEATURETTES -->
+    <!-- About page text and logo displayed -->
 	<div class="container marketing">
-      <hr class="featurette-divider">
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Place Picker <span class="text-muted">Making up your mind for you.</span></h2>
+		  <br>
+          <h1 class="featurette-heading"> NetFoods </h1> 
+		  <h2 class="text-muted">Making up your mind for you.</h2>
           <p class="lead">We've taken out the headache of trying to decide where to eat when nothing sounds good. Instead, let your eyes decide!</p>
         </div>
         <div class="col-md-5">
+		  <br>
           <img class="featurette-image img-responsive" src="img/logo.jpg" alt="Generic placeholder image">
         </div>
+		<br><br>
       </div>
-
-      <hr class="featurette-divider">
-
-
-      <!-- /END THE FEATURETTES -->
 
 
       <!-- FOOTER -->
       <footer>
+		<br>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2014 Hunger-Feed, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 	  </div>
 
