@@ -90,8 +90,8 @@ $server = "127.0.0.1";
 	
 	
   </head>
-<!-- NAVBAR
-================================================== -->
+  
+<!-- NAVBAR================================================== -->
   <body>
     <div class="navbar-wrapper">
       <div class="container">
@@ -162,7 +162,7 @@ $server = "127.0.0.1";
 	
     <div class="container marketing">
 
-		<!-- Past Selections Page -->
+		<!-- Food Info page code starts here -->
 		<br><br><br>
 		
 		<hr class="featurette-divider">
@@ -170,25 +170,25 @@ $server = "127.0.0.1";
 	
 	<div class="container marketing">
 		<hr class="featurette-divider">
-
-		<div class="row featurette">
-			<div class="col-md-7">
-				<h2 class="featurette-heading"><?php echo $array['rest_name'] ?> </h2>
-				<br><br>
-				<div>
-				<!--<img class="img" data-src="holder.js/140x140" alt="Generic placeholder image">-->
-				<?php
-					//$dish_info = mysqli_query($con, "SELECT * FROM dish WHERE id='$info'");
-					//$row = mysqli_fetch_array($dish_info);
-					//$img = $row['img_path'];
-					//var_dump($img);
-				?>
-				<img src="<?php echo $array['img_path'];?>1.jpg" width=140 height=140/></a></div>
-				<p>** Image goes here **</p>
-				</div>
+		
+		<!-- Place/dish name and picture section -->
+		<div class="col-md-7">
+			<h2 class="featurette-heading"> Restaurant: <?php echo $array['rest_name'] ?> </h2>
+			<br><br>
+			<div>
+			<!--<img class="img" data-src="holder.js/140x140" alt="Generic placeholder image">-->
+			<?php
+				//$dish_info = mysqli_query($con, "SELECT * FROM dish WHERE id='$info'");
+				//$row = mysqli_fetch_array($dish_info);
+				//$img = $row['img_path'];
+				//var_dump($img);
+			?>
+			<img src="<?php echo $array['img_path'];?>1.jpg" width=140 height=140/></a></div>
+			<p>Dish Name: <?php echo $array['dish_name'] ?></p>
 			</div>
 			
 			
+			<!-- Ratings section -->
 			<div class="col-md-7">
 			<h2> Ratings: </h2>
 			<!--<div id="13980968631035" class="wE">-->
@@ -228,145 +228,170 @@ $server = "127.0.0.1";
 			</div>
 			
 			
+			<!-- Description section -->
 			<div class="col-md-7">
 			<h2> Description: </h2>
-			
 			<p> ** Description goes here ** </p>
 			<br><br>
 			</div>
 			
+			
+			<!-- Comment box section -->
 			<div class="col-md-7">
-			<h2> Comments: </h2>
-			<!-- Begin Comments JavaScript Code -->
-			<script type="text/javascript" async>(function(){document.write('<div id="fcs_div"><a title="free comment script" href="http://www.freecommentscript.com">&nbsp;&nbsp;<b>Free HTML User Comments</b>...</a></div>');fcs_53596d5108bfd=document.createElement('script');fcs_53596d5108bfd.type="text/javascript";fcs_53596d5108bfd.src="http://www.freecommentscript.com/GetComments.php?p=53596d5108bfd&s=" + escape(window.location) + "&Width=510&FontColor=111111&BackgroundColor=FFFFFF&FontSize=11&Size=10";setTimeout("document.getElementById('fcs_div').appendChild(fcs_53596d5108bfd)",1);})();</script><noscript><div></div></noscript>
-			<!-- End Comments JavaScript Code -->
+			<h2> Let People Know What You Think: </h2>
+			<!-- begin htmlcommentbox.com -->
+			<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
+			<link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+			<script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=(hcb_user.PAGE || ""+window.location), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=16862&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+			<!-- end htmlcommentbox.com -->
 			</div>
 		
+		
+			<!-- Directions/map display ========================== -->
 			<div class="col-md-7">
+			<br><br>
 			<h2> Directions: </h2>
 			</div>
 			<div class = "directions">	
 			<br><br>
 			
 			<head>
-				<style>
-				  html, body, #map-canvas {
-					height: 450px;
-					margin: 0px;
-					padding: 0px;
-					width: 50%;
-				  }
-				  #panel {
-					position: absolute;
-					top: 5px;
-					left: 50%;
-					margin-left: -180px;
-					z-index: 5;
-					background-color: #fff;
-					padding: 5px;
-					border: 1px solid #999;
-				  }
-				</style>
-				<style>
-				  #directions-panel {
-					height: 450px;
-					float: right;
-					width: 50%;
-					overflow: auto;
-				  }
+			<style>
+			  html, body, #map-canvas {
+				height: 450px;
+				margin: 0px;
+				padding: 0px;
+				width: 50%;
+			  }
+			  #panel {
+				position: absolute;
+				top: 5px;
+				left: 50%;
+				margin-left: -180px;
+				z-index: 5;
+				background-color: #fff;
+				padding: 5px;
+				border: 1px solid #999;
+			  }
+			</style>
+			<style>
+			  #directions-panel {
+				height: 450px;
+				float: right;
+				width: 50%;
+				overflow: auto;
+			  }
 
-				  #map-canvas {
-					margin-right: 400px;
-				  }
+			  #map-canvas {
+				margin-right: 400px;
+			  }
 
-				  #control {
-					background: #fff;
-					padding: 5px;
-					font-size: 14px;
-					font-family: Arial;
-					border: 1px solid #ccc;
-					box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
-					display: none;
-				  }
+			  #control {
+				background: #fff;
+				padding: 5px;
+				font-size: 14px;
+				font-family: Arial;
+				border: 1px solid #ccc;
+				box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+				display: none;
+			  }
 
-				  @media print {
-					#map-canvas {
-					  height: 500px;
-					  margin: 0;
-					}
-
-					#directions-panel {
-					  float: none;
-					  width: auto;
-					}
-				  }
-				</style>
-	
-				<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-	
-				<script>
-			var directionsDisplay;
-			var directionsService = new google.maps.DirectionsService();
-
-			function initialize() {
-			  directionsDisplay = new google.maps.DirectionsRenderer();
-			  var mapOptions = {
-				zoom: 14,
-				center: new google.maps.LatLng(40.268835200000000000, -74.780910000000000000)
-			  };
-			  var map = new google.maps.Map(document.getElementById('map-canvas'),
-				  mapOptions);
-			  directionsDisplay.setMap(map);
-			  directionsDisplay.setPanel(document.getElementById('directions-panel'));
-
-			  var control = document.getElementById('control');
-			  control.style.display = 'block';
-			  map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
-			}
-
-			function calcRoute() {
-			  var start = document.getElementById('start').value;
-			  var end = document.getElementById('end').value;
-			  var request = {
-				origin: start,
-				destination: end,
-				travelMode: google.maps.TravelMode.DRIVING
-			  };
-			  directionsService.route(request, function(response, status) {
-				if (status == google.maps.DirectionsStatus.OK) {
-				  directionsDisplay.setDirections(response);
+			  @media print {
+				#map-canvas {
+				  height: 500px;
+				  margin: 0;
 				}
-			  });
-			}
 
-			google.maps.event.addDomListener(window, 'load', initialize);
+				#directions-panel {
+				  float: none;
+				  width: auto;
+				}
+			  }
+			</style>
+			
+			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+			
+			<script>
+		var directionsDisplay;
+		var directionsService = new google.maps.DirectionsService();
+
+		function initialize() {
+		  directionsDisplay = new google.maps.DirectionsRenderer();
+		  var mapOptions = {
+			zoom: 14,
+			center: new google.maps.LatLng(40.268835200000000000, -74.780910000000000000)
+		  };
+		  var map = new google.maps.Map(document.getElementById('map-canvas'),
+			  mapOptions);
+		  directionsDisplay.setMap(map);
+		  directionsDisplay.setPanel(document.getElementById('directions-panel'));
+
+		  var control = document.getElementById('control');
+		  control.style.display = 'block';
+		  map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
+		}
+
+		function calcRoute() {
+		  var start = document.getElementById('start').value;
+		  var end = document.getElementById('end').value;
+		  var request = {
+			origin: start,
+			destination: end,
+			travelMode: google.maps.TravelMode.DRIVING
+		  };
+		  directionsService.route(request, function(response, status) {
+			if (status == google.maps.DirectionsStatus.OK) {
+			  directionsDisplay.setDirections(response);
+			}
+		  });
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
 
 			</script>
-			</head>
+		  </head>
 
-			  <body>
-  
-				<div id="control">
-				  <strong>Start:</strong>
-				  <select id="start" onchange="calcRoute();">
-					<option value="2000 Pennington Road, Ewing Township, NJ 08628">TCNJ</option>
-				  </select>
-				  <strong>End:</strong>
-				  <select id="end" onchange="calcRoute();">
-					<option value="1099 Parkway Ave, Ewing Township, NJ 08628">Ewing Diner</option>
-					<option value="1675 Pennington Rd, Ewing Township, NJ 08618">Slocum's</option>
-					<option value="958 Parkway Ave, Ewing Township, NJ 08618">Subway</option>
-					<option value="12 Railroad Ave, Ewing Township, NJ 08628">Freddie's Restaurant & Tavern</option>
-					<option value="1241 Lawrenceville Rd, Lawrence, NJ 08648">Fedelo's Family Pizzeria</option>
-				  </select>
-				</div>
-				<div id="directions-panel"></div>
-				<div id="map-canvas"></div>
-	
-			  </body>
-			  
-			</div>	
+		  <body>
+		  
+			<div id="control">
+			  <strong>Start:</strong>
+			  <select id="start" onchange="calcRoute();">
+				<option value="2000 Pennington Road, Ewing Township, NJ 08628">TCNJ</option>
+			  </select>
+			  <strong>End:</strong>
+			  <select id="end" onchange="calcRoute();">
+				<option value="72 Upper Ferry Road, Ewing Township, NJ">Cafe 72</option>
+				<option value="11 S Delaware Ave, Yardley, PA 19067">Charcoal BYOB</option>
+				<option value="3349 U.S. 1, Lawrenceville, NJ 08648">Cheeburger Cheeburger</option>
+				<option value="1410 Parkway Ave, Ewing Township, NJ 08628">Danny's Tomato Pie</option>
+				<option value="235 Nassau St, Princeton, NJ 08540">Despana</option>
+				<option value="1099 Parkway Ave, Ewing Township, NJ 08628">Ewing Diner</option>
+				<option value="7 Scotch Rd, Ewing Township, NJ 08628">Five Guys</option>
+				<option value="217 Clarksville Rd, West Windsor Township, NJ 08550">Hot Wok Cafe</option>
+				<option value="511 Lalor St, Hamilton Township, NJ 08611">Malaga Restaurant</option>
+				<option value="1750 N Olden Ave, Ewing Township, NJ 08638">Mama Flora's Trattoria</option>
+				<option value="160 Lawrenceville Pennington Rd, Lawrenceville, NJ 08648">Masa 8 Japanese Cuisine</option>
+				<option value="144 U.S. 130, Bordentown Township, NJ 08505">Mastoris</option>
+				<option value="172 Scotch Rd, Ewing Township, NJ 08628">Metro Grill</option>
+				<option value="800 Denow Rd, Pennington, NJ 08534">Mizuki Asian Bistro</option>
+				<option value="7 Tree Farm Rd #101, Pennington, NJ 08534">Osteria Procaccini</option>
+				<option value="1292 Lower Ferry Rd, Ewing Township, NJ 08628">Palermo's III</option>
+				<option value="1540 Pennington Rd, Ewing Township, NJ 08618">Ray's Subs</option>
+				<option value="17 E Front St Trenton, NJ 08608">Settimo Cielo</option>
+				<option value="2022 Nottingham Way, Hamilton Township, NJ 08619">Szechuan House</option>
+				<option value="109 S Olden Ave, Trenton, NJ 08609">Taqueria El Mariachi</option>
+				<option value="94 S Main St, Yardley, PA 19067">Trattoria Rosa Bianca</option>
+				<option value="1769 N Olden Ave, Ewing Township, NJ 08638">Two Peters Diner</option>
+				<option value="2572 Pennington Rd, Pennington, NJ 08534">Wildflowers Inn</option>
+				<option value="82 E Afton Ave, Yardley, PA 19067">Yardley Inn Restaurant & Bar</option>
+				<option value="1400 Parkway Ave # A3, Ewing Township, NJ 08628">Yummy Sushi</option>
+			  </select>
+			</div>
+			<div id="directions-panel"></div>
+			<div id="map-canvas"></div>
 			
+		    </body>
+			</div>	
 		</div>
 
 		<br><br>
@@ -377,7 +402,7 @@ $server = "127.0.0.1";
 	  <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2014 Hunger-Feed, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 
     </div> <!-- /.container -->
