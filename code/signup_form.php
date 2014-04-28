@@ -118,7 +118,7 @@ $con = mysqli_connect($server, $user_name, $password, $database);
 				<input name="email" type="email" class="form-control" id="inputEmail" placeholder="Enter email">
 			</div>
 			<div class="form-group">
-				<label for="inputPassword">Password (6 Numbers)</label>
+				<label for="inputPassword">Password (6 Characters)</label>
 				<input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
 			</div>
 			<div class="form-group">
