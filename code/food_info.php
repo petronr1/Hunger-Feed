@@ -40,6 +40,8 @@ $server = "127.0.0.1";
 			//Echo "Your vote has been cast <p>"; 
 		}
 	}
+
+	
 ?>
 
 
@@ -50,6 +52,8 @@ $server = "127.0.0.1";
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="../assets/ico/food.ico">
+
+
 
     <title>Netfoods</title>
 
@@ -170,6 +174,7 @@ $server = "127.0.0.1";
 	
 	<div class="container marketing">
 		<hr class="featurette-divider">
+<<<<<<< HEAD
 		
 		<!-- Place/dish name and picture section -->
 		<div class="col-md-7">
@@ -185,6 +190,49 @@ $server = "127.0.0.1";
 			?>
 			<img src="<?php echo $array['img_path'];?>1.jpg" width=140 height=140/></a></div>
 			<p>Dish Name: <?php echo $array['dish_name'] ?></p>
+=======
+		<div class="row featurette">
+			<div class="col-md-7">
+				<h2 class="featurette-heading"> Restaurant: <?php echo $array['rest_name'] ?> </h2>
+				<br><br>
+				<div>
+				<!--<img class="img" data-src="holder.js/140x140" alt="Generic placeholder image">-->
+				<?php
+					//$dish_info = mysqli_query($con, "SELECT * FROM dish WHERE id='$info'");
+					//$row = mysqli_fetch_array($dish_info);
+					//$img = $row['img_path'];
+					//var_dump($img);
+				?>
+				<img src="<?php echo $array['img_path'];?>1.jpg" width=270 height=270/></a></div>
+				<p>Dish Name: <?php echo $array['dish_name'] ?></p>
+				</br>
+				<form method="POST" name="favorite" action="food_info.php?info=<?php echo $info;?>">
+					<button type="submit" name="future" class="btn btn-success">Save it for later!</button>
+					<button type="submit" name="past" class="btn btn-success">I already ate this!</button>
+				</form>
+				
+				<?php
+					$dishInfo = $info;
+					$i = 1;
+					$newfav = 'f' . strval($i);
+// 					echo $newfav;
+					if(isset($_POST['future']))
+					{
+						mysqli_query($con, "UPDATE profile SET favorite_dishes = '".$dishInfo."' WHERE email='".$email_cookie."'");
+						mysqli_query($con, "ALTER TABLE profile SET fav1 VARCHAR(255) DEFAULT NULL");
+
+						echo "You can save it for later!";
+					}
+
+					if(isset($_POST['past']))
+					{
+						mysqli_query($con, "UPDATE profile SET past_dishes = '$dishInfo' WHERE email='".$email_cookie."'");
+						echo "Hope it was good!";
+					}
+
+				?>
+				</div>
+>>>>>>> 82dde99adc107bcb9cb12f1f095332313186f389
 			</div>
 			
 			
@@ -281,6 +329,7 @@ $server = "127.0.0.1";
 				width: 50%;
 				overflow: auto;
 			  }
+<<<<<<< HEAD
 
 			  #map-canvas {
 				margin-right: 400px;
@@ -331,6 +380,58 @@ $server = "127.0.0.1";
 		  map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
 		}
 
+=======
+
+			  #map-canvas {
+				margin-right: 400px;
+			  }
+
+			  #control {
+				background: #fff;
+				padding: 5px;
+				font-size: 14px;
+				font-family: Arial;
+				border: 1px solid #ccc;
+				box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+				display: none;
+			  }
+
+			  @media print {
+				#map-canvas {
+				  height: 500px;
+				  margin: 0;
+				}
+
+				#directions-panel {
+				  float: none;
+				  width: auto;
+				}
+			  }
+			</style>
+			
+			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+			
+			<script>
+		var directionsDisplay;
+		var directionsService = new google.maps.DirectionsService();
+
+		function initialize() {
+		  directionsDisplay = new google.maps.DirectionsRenderer();
+		  var mapOptions = {
+			zoom: 14,
+			center: new google.maps.LatLng(40.268835200000000000, -74.780910000000000000)
+		  };
+		  var map = new google.maps.Map(document.getElementById('map-canvas'),
+			  mapOptions);
+		  directionsDisplay.setMap(map);
+		  directionsDisplay.setPanel(document.getElementById('directions-panel'));
+
+		  var control = document.getElementById('control');
+		  control.style.display = 'block';
+		  map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
+		}
+
+>>>>>>> 82dde99adc107bcb9cb12f1f095332313186f389
 		function calcRoute() {
 		  var start = document.getElementById('start').value;
 		  var end = document.getElementById('end').value;
