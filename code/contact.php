@@ -125,7 +125,7 @@ $con = mysqli_connect($server, $user_name, $password, $database);
       <!-- Show our pictures and informations -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="img/pedro.jpg" width="140" height="140" alt="Chris picture">
+          <img class="img-circle" src="img/borm.jpg" width="140" height="140" alt="Chris picture">
           <h2>Chris Borm</h2>
           <p>Email: borm2@tcnj.edu</p>
           
