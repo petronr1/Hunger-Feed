@@ -7,26 +7,17 @@ $password = "tOiTvwxpsM";
 $database = "student5";
 $server = "127.0.0.1";
 
- $con = mysqli_connect($server, $user_name, $password, $database);
+$con = mysqli_connect($server, $user_name, $password, $database);
 
-  //CHECK to make sure there is no MySQL database error
-  if (mysqli_connect_errno())
-  {
-echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-//
-// $dishes_american = mysqli_query($con, "SELECT * FROM dish Where type1 = 'American' OR type2 = 'American'");
-//
-// for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
-// {
-// $row = mysqli_fetch_array($dishes_ammerican);
-// $img_italian[$i] = $row['img_path'];
-// }
+	//CHECK to make sure there is no MySQL database error
+	if (mysqli_connect_errno())
+	{
+		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+	}
 
-    $info = $_GET['info'];
 $email_cookie = $_COOKIE['email'];
-$mode = $_GET['mode'];
-}
+
+
 ?>
 
 
@@ -96,6 +87,7 @@ font-size:16px;
 <li><a href="home.php">Home</a></li>
 <li><a href="about.php">About</a></li>
 <li><a href="contact.php">Contact</a></li>
+
 <?php
 if(isset($email_cookie)){
 echo '<li class="dropdown">
@@ -133,41 +125,46 @@ echo '</ul>
 
 <!-- ================================================== -->
 <?php
-$sql=("SELECT * FROM dish WHERE id='$info'");
+
+$sql=("SELECT favorite_dishes FROM profile WHERE email='$email_cookie'");
 //$sql = ("SELECT `email` FROM `profile` WHERE `email` like '$email'");
 $result= mysqli_query($con, $sql);
 $array = mysqli_fetch_array($result);
-//$logarray = $array['info'];
-//print_r($logarray);
+$id_fav = $array['favorite_dishes'];
+
+$sql=("SELECT * FROM dish WHERE id='$id_fav'");
+$result= mysqli_query($con, $sql);
+$array = mysqli_fetch_array($result);
+$path_fav = $array['img_path'];
+$name_fav = $array['dish_name'];
+
 
 ?>
+
 <div class="container marketing">
 
 <!-- Past Selections Page -->
-<br><br><br>
+<br>
 <hr class="featurette-divider">
 <div class="container marketing">
 <hr class="featurette-divider">
 
 <div class="row featurette">
 <div class="col-md-7">
-<h2 class="featurette-heading"><?php echo $array['rest_name'] ?> </h2>
-<br><br>
+<h2 class="featurette-heading"><?php echo $name_fav;?></h2>
 <div>
-<!--<img class="img" data-src="holder.js/140x140" alt="Generic placeholder image">-->
-<?php
-$dish_info = mysqli_query($con, "SELECT * FROM dish WHERE id='$info'");
-$row = mysqli_fetch_array($dish_info);
-$img = $row['img_path'];
-var_dump($img);
-?>
-<img src="<?php echo $array['img_path'];?>1.jpg" width=140 height=140/></a></div>
-<p>** Image goes here **</p>
+<!--<img class="img" data-src="holder.js/140x140" alt="Generic placeholder image">
+
+// $dish_info = mysqli_query($con, "SELECT * FROM dish WHERE id='$info'");
+// $row = mysqli_fetch_array($dish_info);
+// $img = $row['img_path'];
+// var_dump($img);
+-->
+
+<a href="food_info.php?info=<?php echo $id_fav;?>"><img src="<?php echo $path_fav;?>1.jpg" width=140 height=140/></a></div>
 </div>
 </div>
 <div class="col-md-7">
-<h2> Description: </h2>
-<p> ** Description goes here ** </p>
 <br><br>
 </div>
 </body>
@@ -179,7 +176,7 @@ var_dump($img);
 <!-- FOOTER -->
 <footer>
 <p class="pull-right"><a href="#">Back to top</a></p>
-<p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+<p>&copy; 2014 Hunger-Feed, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
 </footer>
 
 </div> <!-- /.container -->
