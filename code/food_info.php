@@ -286,6 +286,7 @@ $server = "127.0.0.1";
 			<br><br>
 			
 			<head>
+			 <!--This style block creates the dimensions and parameters of the google map and the restaurant selection panel-->
 			<style>
 			  html, body, #map-canvas {
 				height: 450px;
@@ -304,6 +305,7 @@ $server = "127.0.0.1";
 				border: 1px solid #999;
 			  }
 			</style>
+			<!--This style block creates the dimensions and parameters of the direction display panel-->
 			<style>
 			  #directions-panel {
 				height: 450px;
@@ -342,9 +344,11 @@ $server = "127.0.0.1";
 			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 			
 			<script>
+		//Sets up the variables needed for the directions service
 		var directionsDisplay;
 		var directionsService = new google.maps.DirectionsService();
 
+		//Initializes the map centered over TCNJ, creates the directions panel, creates the restaurants panel
 		function initialize() {
 		  directionsDisplay = new google.maps.DirectionsRenderer();
 		  var mapOptions = {
@@ -360,6 +364,7 @@ $server = "127.0.0.1";
 		  control.style.display = 'block';
 		  map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
 		}
+		//Calculates route based upon selections in the restaurants panel
 		function calcRoute() {
 		  var start = document.getElementById('start').value;
 		  var end = document.getElementById('end').value;
@@ -381,7 +386,7 @@ $server = "127.0.0.1";
 		  </head>
 
 		  <body>
-		  
+		  <!--Sets up the starting location (TCNJ), as well as the locations of every restaurant-->
 			<div id="control">
 			  <strong>Start:</strong>
 			  <select id="start" onchange="calcRoute();">
@@ -416,6 +421,7 @@ $server = "127.0.0.1";
 				<option value="1400 Parkway Ave # A3, Ewing Township, NJ 08628">Yummy Sushi</option>
 			  </select>
 			</div>
+			<!--Puts the map and directions panel onto the web page-->
 			<div id="directions-panel"></div>
 			<div id="map-canvas"></div>
 			
