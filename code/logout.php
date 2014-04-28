@@ -1,3 +1,14 @@
+<!-- 
+CSC470
+NetFood
+Created 04/28/2014
+
+Rocco Petrongolo
+Warren Smith
+Pedro Furlanetto
+Jared Milburn
+Chris Borm
+-->
 <?php
 	/**
 	* The logout file

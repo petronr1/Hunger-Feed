@@ -1,3 +1,37 @@
+<!-- 
+
+CSC470
+
+NetFood
+
+Created 04/28/2014
+
+
+
+Rocco Petrongolo
+
+Warren Smith
+
+Pedro Furlanetto
+
+Jared Milburn
+
+Chris Borm
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../assets/ico/food.ico">
+    
 <?php
 $user_name = "student5";
 $password = "tOiTvwxpsM";
@@ -12,17 +46,6 @@ $con = mysqli_connect($server, $user_name, $password, $database);
 		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		}
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="../assets/ico/food.ico">
-
     <title>Netfoods</title>
 
     <!-- Bootstrap core CSS -->
@@ -143,4 +166,5 @@ $con = mysqli_connect($server, $user_name, $password, $database);
     <script src="../dist/js/bootstrap.min.js"></script>
 	<script src="../assets/js/docs.min.js"></script>
   </body>
+
 </html>

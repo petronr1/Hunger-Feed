@@ -1,4 +1,16 @@
+<!-- 
+CSC470
+NetFood
+Created 04/28/2014
+
+Rocco Petrongolo
+Warren Smith
+Pedro Furlanetto
+Jared Milburn
+Chris Borm
+-->
 <?php
+//Connecting the database
 $user_name = "student5";
 $password = "tOiTvwxpsM";
 $database = "student5";
@@ -45,7 +57,7 @@ $con = mysqli_connect($server, $user_name, $password, $database);
   <body>
     <div class="navbar-wrapper">
       <div class="container">
-
+		<!--Navbar-->
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
           <div class="container-fluid">
             <div class="navbar-header">
@@ -62,36 +74,38 @@ $con = mysqli_connect($server, $user_name, $password, $database);
                 <li><a href="home.php">Home</a></li>
                 <li><a href="about.php">About</a></li>
                 <li class="active"><a href="#">Contact</a></li>
-                <?php  
-			    $email_cookie = $_COOKIE['email'];
-				if(isset($email_cookie)){
-					echo '<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Past Selections</a></li>
-								<li><a href="#">Favorite Dishes</a></li>
-							</ul>
-						</li>
-					</ul>
-					<form class="navbar-form navbar-right" role="form" method="post" action="logout.php">
-					<button name="logout" type="submit" class="btn btn-success">Log Out</button>
-					</form>';
+                <?php
+					//If the user is logged in show this on navbar
+					$email_cookie = $_COOKIE['email'];
+					if(isset($email_cookie)){
+						echo '<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="past.php">Past Selections</a></li>
+									<li><a href="favorite.php">Favorite Dishes</a></li>
+								</ul>
+							</li>
+						</ul>
+						<form class="navbar-form navbar-right" role="form" method="post" action="logout.php">
+							<p>
+							<button name="logout" type="submit" class="btn btn-success">Log Out</button>
+						</form>';
 				
-				
-				} else {
-				echo '</ul>
-					<form class="navbar-form navbar-right" role="form" method="post" action="login.php">
-				<div class="form-group">
-					<input name="email" type="text" placeholder="Email" class="form-control">
-				</div>
-				<div class="form-group">
-					<input name="password" type="password" placeholder="Password" class="form-control">
-				</div>
-				<button name="signin" type="submit" class="btn btn-success">Sign in</button>
-				<p><font color = "ffffff">Don\'t have an account?</font><a href="signup_form.php"><font color = "0000ff"><b> Sign up now</b></font></a></p>
-			  </form>';
-				}
-			  ?>
+					//If the user is not logged in show this on navbar
+					} else {
+						echo '</ul>
+								<form class="navbar-form navbar-right" role="form" method="post" action="login.php">
+									<div class="form-group">
+										<input name="email" type="text" placeholder="Email" class="form-control">
+									</div>
+									<div class="form-group">
+										<input name="password" type="password" placeholder="Password" class="form-control">
+									</div>
+									<button name="signin" type="submit" class="btn btn-success">Sign in</button>
+									<p><font color = "ffffff">Don\'t have an account?</font><a href="signup_form.php"><font color = "0000ff"><b> Sign up now</b></font></a></p>
+								</form>';
+					}
+				?>
 			</div>
           </div>
         </div>
@@ -108,34 +122,34 @@ $con = mysqli_connect($server, $user_name, $password, $database);
     <div class="container marketing">
 	  <hr class="featurette-divider">
 
-      <!-- Three columns of text below the carousel -->
+      <!-- Show our pictures and informations -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <img class="img-circle" src="img/borm.jpg" width="140" height="140" alt="Chris picture">
           <h2>Chris Borm</h2>
           <p>Email: borm2@tcnj.edu</p>
           
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <img class="img-circle" src="img/pedro.jpg" width="140" height="140" alt="Pedro picture">
           <h2>Pedro Furlanetto</h2>
           <p>Email: furlanp1@tcnj.edu</p>
           
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <img class="img-circle" src="img/jared.jpg" width="140" height="140" alt="Jared picture">
           <h2>Jared Milburn</h2>
           <p>Email: milburj1@tcnj.edu</p>
        
         </div><!-- /.col-lg-4 -->
          <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <img class="img-circle" src="img/rocco.jpg" width="140" height="140" alt="Rocco picture">
           <h2>Rocco Petrongolo</h2>
           <p>Email: petronr1@tcnj.edu</p>		
          
         </div><!-- /.col-lg-4 -->
          <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <img class="img-circle" src="img/warren.jpg" width="140" height="140" alt="Warren picture">
           <h2>Warren Smith</h2>
           <p>Email: smith332@tcnj.edu</p>
     
@@ -149,7 +163,7 @@ $con = mysqli_connect($server, $user_name, $password, $database);
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; Hunger-Feed, Inc. &middot;</p>
       </footer>
 
     </div><!-- /.container -->

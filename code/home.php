@@ -1,3 +1,14 @@
+<!-- 
+CSC470
+NetFood
+Created 04/28/2014
+
+Rocco Petrongolo
+Warren Smith
+Pedro Furlanetto
+Jared Milburn
+Chris Borm
+-->
 <?php
 $user_name = "student5";
 $password = "tOiTvwxpsM";
@@ -96,6 +107,7 @@ $con = mysqli_connect($server, $user_name, $password, $database);
 							<ul class="dropdown-menu">
 								<li><a href="past.php">Past Selections</a></li>
 								<li><a href="favorite.php">Favorite Dishes</a></li>
+								<li><a href="dishupload.php">Upload a dish</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -144,7 +156,7 @@ $con = mysqli_connect($server, $user_name, $password, $database);
       <footer>
         <br>
 		<p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Hunger-Feed, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2014 Hunger-Feed, Inc. &middot; </p>
       </footer>
 
     </div><!-- /.container -->

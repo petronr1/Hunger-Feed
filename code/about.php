@@ -1,4 +1,16 @@
+<!-- 
+CSC470
+NetFood
+Created 04/28/2014
+
+Rocco Petrongolo
+Warren Smith
+Pedro Furlanetto
+Jared Milburn
+Chris Borm
+-->
 <?php
+//Connecting the database
 $user_name = "student5";
 $password = "tOiTvwxpsM";
 $database = "student5";
@@ -45,7 +57,7 @@ $con = mysqli_connect($server, $user_name, $password, $database);
   <body>
     <div class="navbar-wrapper">
       <div class="container">
-
+		<!--Navbar-->
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
           <div class="container-fluid">
             <div class="navbar-header">
@@ -65,11 +77,13 @@ $con = mysqli_connect($server, $user_name, $password, $database);
                 <?php  
 			    $email_cookie = $_COOKIE['email'];
 				if(isset($email_cookie)){
+				//If the user is logged in show this on navbar
 					echo '<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Past Selections</a></li>
-								<li><a href="#">Favorite Dishes</a></li>
+								<li><a href="past.php">Past Selections</a></li>
+								<li><a href="favorite.php">Favorite Dishes</a></li>
+								<li><a href="dishupload.php">Upload a dish</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -77,7 +91,7 @@ $con = mysqli_connect($server, $user_name, $password, $database);
 					<button name="logout" type="submit" class="btn btn-success">Log Out</button>
 					</form>';
 				
-				
+				//If the user is not logged in show this on navbar
 				} else {
 				echo '</ul>
 					<form class="navbar-form navbar-right" role="form" method="post" action="login.php">
@@ -122,7 +136,7 @@ $con = mysqli_connect($server, $user_name, $password, $database);
       <footer>
 		<br>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Hunger-Feed, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2014 Hunger-Feed, Inc. &middot;</p>
       </footer>
 	  </div>
 

@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- 
+
+CSC470
+
+NetFood
+
+Created 04/28/2014
+
+
+
+Rocco Petrongolo
+
+Warren Smith
+
+Pedro Furlanetto
+
+Jared Milburn
+
+Chris Borm
+
+-->
+
 <?php
 $user_name = "student5";
 $password = "tOiTvwxpsM";
@@ -393,4 +415,5 @@ for($i = 0; $i < mysqli_num_rows($dishes); $i++)
     <script src="../dist/js/bootstrap.min.js"></script>
     <script src="../assets/js/docs.min.js"></script>
   </body>
+
 </html>
