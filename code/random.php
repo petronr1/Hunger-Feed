@@ -2,26 +2,18 @@
 <html lang="en">
 
 <!-- 
-
 CSC470
-
 NetFood
-
 Created 04/28/2014
 
-
-
 Rocco Petrongolo
-
 Warren Smith
-
 Pedro Furlanetto
-
 Jared Milburn
-
 Chris Borm
-
 -->
+
+<!--Database Connection & Data Initialization-->
 
 <?php
 $user_name = "student5";
@@ -105,14 +97,17 @@ for($i = 0; $i < mysqli_num_rows($dishes); $i++)
                 <li class="active"><a href="home.php">Home</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
+                
+            <!--Check if user is logged-in-->
+
                 <?php  
 			    $email_cookie = $_COOKIE['email'];
 				if(isset($email_cookie)){
 					echo '<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Past Selections</a></li>
-								<li><a href="#">Favorite Dishes</a></li>
+								<li><a href="#">Past Selection</a></li>
+								<li><a href="#">Favorite Dish</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -140,6 +135,8 @@ for($i = 0; $i < mysqli_num_rows($dishes); $i++)
         </div>
       </div>
     </div>
+	
+	<!--Display random pictures of food from the database-->
 
     <!-- Carousel
     ================================================== -->
@@ -158,6 +155,10 @@ for($i = 0; $i < mysqli_num_rows($dishes); $i++)
       <div class="carousel-inner">
         <div class="item active">
 			<div class="row">
+			
+	  <!-- Find a random number corresponding to which picture to display -->
+	  <!-- Checks to make sure duplicate pictures are not displayed on the active carousel display -->
+
 				<?php 
 					$var1 = (rand(1,$count));
 					var_dump($var1);

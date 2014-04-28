@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <!-- 
 CSC470
 NetFood
@@ -10,8 +13,7 @@ Jared Milburn
 Chris Borm
 -->
 
-<!DOCTYPE html>
-<html lang="en">
+<!--Database Connection & Data Initialization-->
 
 <?php
 $user_name = "student5";
@@ -204,14 +206,17 @@ for($i = 0; $i < mysqli_num_rows($dishes_spanish); $i++)
                 <li><a href="home.php">Home</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
+                
+            <!--Check if user is logged-in-->
+                
                 <?php  
 			    $email_cookie = $_COOKIE['email'];
 				if(isset($email_cookie)){
 					echo '<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Past Selections</a></li>
-								<li><a href="#">Favorite Dishes</a></li>
+								<li><a href="#">Past Selection</a></li>
+								<li><a href="#">Favorite Dish</a></li>
 								<li><a href="dishupload.php">Upload a dish</a></li>
 							</ul>
 						</li>
@@ -241,6 +246,9 @@ for($i = 0; $i < mysqli_num_rows($dishes_spanish); $i++)
       </div>
     </div>
 
+	<!--Display random pictures of food from the database -->
+	<!-- For each category, find a random number corresponding to which picture to display -->
+	<!-- Checks to make sure duplicate pictures are not displayed on the active carousel display -->
 
     <!-- Carousel
     ================================================== -->

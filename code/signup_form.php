@@ -1,29 +1,18 @@
-<!-- 
-
-CSC470
-
-NetFood
-
-Created 04/28/2014
-
-
-
-Rocco Petrongolo
-
-Warren Smith
-
-Pedro Furlanetto
-
-Jared Milburn
-
-Chris Borm
-
--->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- 
+CSC470
+NetFood
+Created 04/28/2014
+
+Rocco Petrongolo
+Warren Smith
+Pedro Furlanetto
+Jared Milburn
+Chris Borm
+-->
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,7 +20,9 @@ Chris Borm
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="../assets/ico/food.ico">
-    
+
+<!--Database Connection-->
+
 <?php
 $user_name = "student5";
 $password = "tOiTvwxpsM";
@@ -85,14 +76,17 @@ $con = mysqli_connect($server, $user_name, $password, $database);
                 <li><a href="home.php">Home</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
+                
+            <!--Check if user is logged-in-->
+            
               <?php  
 			    $email_cookie = $_COOKIE['email'];
 				if(isset($email_cookie)){
 					echo '<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Past Selections</a></li>
-								<li><a href="#">Favorite Dishes</a></li>
+								<li><a href="#">Past Selection</a></li>
+								<li><a href="#">Favorite Dish</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -120,6 +114,8 @@ $con = mysqli_connect($server, $user_name, $password, $database);
         </div>
       </div>
     </div>
+
+<!--Signup Form-->
 
     <div class="container">
 
