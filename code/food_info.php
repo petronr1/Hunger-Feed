@@ -174,27 +174,9 @@ $server = "127.0.0.1";
 	
 	<div class="container marketing">
 		<hr class="featurette-divider">
-<<<<<<< HEAD
-		
-		<!-- Place/dish name and picture section -->
-		<div class="col-md-7">
-			<h2 class="featurette-heading"> Restaurant: <?php echo $array['rest_name'] ?> </h2>
-			<br><br>
-			<div>
-			<!--<img class="img" data-src="holder.js/140x140" alt="Generic placeholder image">-->
-			<?php
-				//$dish_info = mysqli_query($con, "SELECT * FROM dish WHERE id='$info'");
-				//$row = mysqli_fetch_array($dish_info);
-				//$img = $row['img_path'];
-				//var_dump($img);
-			?>
-			<img src="<?php echo $array['img_path'];?>1.jpg" width=140 height=140/></a></div>
-			<p>Dish Name: <?php echo $array['dish_name'] ?></p>
-=======
-
 		<div class="row featurette">
 			<div class="col-md-7">
-				<h2 class="featurette-heading"><?php echo $array['dish_name'] . " - " .$array['rest_name'] ?> </h2>
+				<h2 class="featurette-heading"> Restaurant: <?php echo $array['rest_name'] ?> </h2>
 				<br><br>
 				<div>
 				<!--<img class="img" data-src="holder.js/140x140" alt="Generic placeholder image">-->
@@ -205,6 +187,7 @@ $server = "127.0.0.1";
 					//var_dump($img);
 				?>
 				<img src="<?php echo $array['img_path'];?>1.jpg" width=270 height=270/></a></div>
+				<p>Dish Name: <?php echo $array['dish_name'] ?></p>
 				</br>
 				<form method="POST" name="favorite" action="food_info.php?info=<?php echo $info;?>">
 					<button type="submit" name="future" class="btn btn-success">Save it for later!</button>
@@ -232,7 +215,6 @@ $server = "127.0.0.1";
 
 				?>
 				</div>
->>>>>>> 6cfbc40ce58d86f68445cb560ea4cd3d6e5ad359
 			</div>
 			
 			
