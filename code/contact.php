@@ -83,11 +83,11 @@ $con = mysqli_connect($server, $user_name, $password, $database);
 								<ul class="dropdown-menu">
 									<li><a href="past.php">Past Selections</a></li>
 									<li><a href="favorite.php">Favorite Dishes</a></li>
-									<li><a href="dishupload.php">Upload a dish</a></li>
 								</ul>
 							</li>
 						</ul>
 						<form class="navbar-form navbar-right" role="form" method="post" action="logout.php">
+							<p>
 							<button name="logout" type="submit" class="btn btn-success">Log Out</button>
 						</form>';
 				
@@ -125,31 +125,31 @@ $con = mysqli_connect($server, $user_name, $password, $database);
       <!-- Show our pictures and informations -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <img class="img-circle" src="img/pedro.jpg" width="140" height="140" alt="Chris picture">
           <h2>Chris Borm</h2>
           <p>Email: borm2@tcnj.edu</p>
           
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <img class="img-circle" src="img/pedro.jpg" width="140" height="140" alt="Pedro picture">
           <h2>Pedro Furlanetto</h2>
           <p>Email: furlanp1@tcnj.edu</p>
           
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <img class="img-circle" src="img/jared.jpg" width="140" height="140" alt="Jared picture">
           <h2>Jared Milburn</h2>
           <p>Email: milburj1@tcnj.edu</p>
        
         </div><!-- /.col-lg-4 -->
          <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <img class="img-circle" src="img/rocco.jpg" width="140" height="140" alt="Rocco picture">
           <h2>Rocco Petrongolo</h2>
           <p>Email: petronr1@tcnj.edu</p>		
          
         </div><!-- /.col-lg-4 -->
          <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <img class="img-circle" src="img/warren.jpg" width="140" height="140" alt="Warren picture">
           <h2>Warren Smith</h2>
           <p>Email: smith332@tcnj.edu</p>
     
