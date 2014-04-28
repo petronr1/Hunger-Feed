@@ -130,7 +130,7 @@ $con = mysqli_connect($server, $user_name, $password, $database);
 			</div>
 			<div class="form-group">
 				<label for="inputType1">Type 1</label>
-				<input type="text" name="type1" type="Type1" class="form-control" id="inputType1" placeholder="Enter the type of food">
+				<input type="text" name="type1" type="Type1" class="form-control" id="inputType1" placeholder="Enter the type of food. EG Italian, Chinese">
 			</div>
 			<div class="form-group">
 				<label for="inputType2">Type 2</label>
