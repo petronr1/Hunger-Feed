@@ -15,6 +15,9 @@ Chris Borm
 
 <!--Database Connection & Data Initialization-->
 
+<!DOCTYPE html>
+<html lang="en">
+
 <?php
 $user_name = "student5";
 $password = "tOiTvwxpsM";
@@ -22,9 +25,6 @@ $database = "student5";
 $server = "127.0.0.1";
 
 $count = -1;
-$var1 = 0;
-$var2 = 0;
-$var3 = 0;
 
 $con = mysqli_connect($server, $user_name, $password, $database);
 
@@ -90,24 +90,21 @@ for($i = 0; $i < mysqli_num_rows($dishes); $i++)
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Netfoods</a>
+              <a class="navbar-brand" href="#">Place Picker</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="home.php">Home</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
-                
-            <!--Check if user is logged-in-->
-
                 <?php  
 			    $email_cookie = $_COOKIE['email'];
 				if(isset($email_cookie)){
 					echo '<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Past Selection</a></li>
-								<li><a href="#">Favorite Dish</a></li>
+								<li><a href="#">Past Selections</a></li>
+								<li><a href="#">Favorite Dishes</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -135,8 +132,6 @@ for($i = 0; $i < mysqli_num_rows($dishes); $i++)
         </div>
       </div>
     </div>
-	
-	<!--Display random pictures of food from the database-->
 
     <!-- Carousel
     ================================================== -->
@@ -155,240 +150,112 @@ for($i = 0; $i < mysqli_num_rows($dishes); $i++)
       <div class="carousel-inner">
         <div class="item active">
 			<div class="row">
-			
-	  <!-- Find a random number corresponding to which picture to display -->
-	  <!-- Checks to make sure duplicate pictures are not displayed on the active carousel display -->
-
-				<?php 
-					$var1 = (rand(1,$count));
-					var_dump($var1);
-					do
-					{
-// 						$var2 = (rand(1,$count));
-					} while ($var2 == $var1);
-					do
-					{
-// 						$var3 = (rand(1,$count));
-
-					} while (($var3 == $var1) || ($var3 = $var2));
-				?>
-			
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var1];?>" class="thumbnail">
-				<img src="<?php echo $img[$var1];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var2];?>" class="thumbnail">
-				<img src="<?php echo $img[$var2];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var3];?>" class="thumbnail">
-				<img src="<?php echo $img[$var3];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
 			</div>
         </div>
-        		<?php 
-					$var1= (rand(1,$count));
-					do
-					{
-						$var2 = (rand(1,$count));
-					} while ($var2 == $var1);
-					do
-					{
-						$var3 = (rand(1,$count));
-					} while (($var3 == $var1) || ($var3 = $var2));
-				?>
         <div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var1];?>" class="thumbnail">
-				<img src="<?php echo $img[$var1];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var2];?>" class="thumbnail">
-				<img src="<?php echo $img[$var2];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var3];?>" class="thumbnail">
-				<img src="<?php echo $img[$var3];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
 			</div>
         </div>
-        		<?php 
-					$var1= (rand(1,$count));
-					do
-					{
-						$var2 = (rand(1,$count));
-					} while ($var2 == $var1);
-					do
-					{
-						$var3 = (rand(1,$count));
-					} while (($var3 == $var1) || ($var3 = $var2));
-				?>        
         <div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var1];?>" class="thumbnail">
-				<img src="<?php echo $img[$var1];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var2];?>" class="thumbnail">
-				<img src="<?php echo $img[$var2];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var3];?>" class="thumbnail">
-				<img src="<?php echo $img[$var3];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
 			</div>
         </div>
-        		<?php 
-					$var1= (rand(1,$count));
-					do
-					{
-						$var2 = (rand(1,$count));
-					} while ($var2 == $var1);
-					do
-					{
-						$var3 = (rand(1,$count));
-					} while (($var3 == $var1) || ($var3 = $var2));
-				?>
 		<div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var1];?>" class="thumbnail">
-				<img src="<?php echo $img[$var1];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var2];?>" class="thumbnail">
-				<img src="<?php echo $img[$var2];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var3];?>" class="thumbnail">
-				<img src="<?php echo $img[$var3];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
 			</div>
         </div>
-        		<?php 
-					$var1= (rand(1,$count));
-					do
-					{
-						$var2 = (rand(1,$count));
-					} while ($var2 == $var1);
-					do
-					{
-						$var3 = (rand(1,$count));
-					} while (($var3 == $var1) || ($var3 = $var2));
-				?>
 		<div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var1];?>" class="thumbnail">
-				<img src="<?php echo $img[$var1];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var2];?>" class="thumbnail">
-				<img src="<?php echo $img[$var2];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var3];?>" class="thumbnail">
-				<img src="<?php echo $img[$var3];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
 			</div>
         </div>
-        		<?php 
-					$var1= (rand(1,$count));
-					do
-					{
-						$var2 = (rand(1,$count));
-					} while ($var2 == $var1);
-					do
-					{
-						$var3 = (rand(1,$count));
-					} while (($var3 == $var1) || ($var3 = $var2));
-				?>
 		<div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var1];?>" class="thumbnail">
-				<img src="<?php echo $img[$var1];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var2];?>" class="thumbnail">
-				<img src="<?php echo $img[$var2];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var3];?>" class="thumbnail">
-				<img src="<?php echo $img[$var3];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
 			</div>
         </div>
-        		<?php 
-					$var1= (rand(1,$count));
-					do
-					{
-						$var2 = (rand(1,$count));
-					} while ($var2 == $var1);
-					do
-					{
-						$var3 = (rand(1,$count));
-					} while (($var3 == $var1) || ($var3 = $var2));
-				?>
 		<div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var1];?>" class="thumbnail">
-				<img src="<?php echo $img[$var1];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var2];?>" class="thumbnail">
-				<img src="<?php echo $img[$var2];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var3];?>" class="thumbnail">
-				<img src="<?php echo $img[$var3];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
 			</div>
         </div>
-        		<?php 
-					$var1= (rand(1,$count));
-					do
-					{
-						$var2 = (rand(1,$count));
-					} while ($var2 == $var1);
-					do
-					{
-						$var3 = (rand(1,$count));
-					} while (($var3 == $var1) || ($var3 = $var2));
-				?>
 		<div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var1];?>" class="thumbnail">
-				<img src="<?php echo $img[$var1];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var2];?>" class="thumbnail">
-				<img src="<?php echo $img[$var2];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var3];?>" class="thumbnail">
-				<img src="<?php echo $img[$var3];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
 			</div>
         </div>
-        		<?php 
-					$var1= (rand(1,$count));
-					do
-					{
-						$var2 = (rand(1,$count));
-					} while ($var2 == $var1);
-					do
-					{
-						$var3 = (rand(1,$count));
-					} while (($var3 == $var1) || ($var3 = $var2));
-				?>
 		<div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var1];?>" class="thumbnail">
-				<img src="<?php echo $img[$var1];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var2];?>" class="thumbnail">
-				<img src="<?php echo $img[$var2];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var3];?>" class="thumbnail">
-				<img src="<?php echo $img[$var3];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
 			</div>
         </div>
-        		<?php 
-					$var1= (rand(1,$count));
-					do
-					{
-						$var2 = (rand(1,$count));
-					} while ($var2 == $var1);
-					do
-					{
-						$var3 = (rand(1,$count));
-					} while (($var3 == $var1) || ($var3 = $var2));
-				?>
 		<div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var1];?>" class="thumbnail">
-				<img src="<?php echo $img[$var1];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var2];?>" class="thumbnail">
-				<img src="<?php echo $img[$var2];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var3];?>" class="thumbnail">
-				<img src="<?php echo $img[$var3];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
 			</div>
         </div>
-        		<?php 
-					$var1= (rand(1,$count));
-					do
-					{
-						$var2 = (rand(1,$count));
-					} while ($var2 == $var1);
-					do
-					{
-						$var3 = (rand(1,$count));
-					} while (($var3 == $var1) || ($var3 = $var2));
-				?>
 		<div class="item">
 			<div class="row">
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var1];?>" class="thumbnail">
-				<img src="<?php echo $img[$var1];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var2];?>" class="thumbnail">
-				<img src="<?php echo $img[$var2];?><?php echo rand(1,1);?>.jpg" /></a></div>
-				<div class="col-xs-4"><a href="food_info.php?info=<?php echo $id[$var3];?>" class="thumbnail">
-				<img src="<?php echo $img[$var3];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
+				<div class="col-xs-4"><?php $var= (rand(1,$count));?><a href="food_info.php?info=<?php echo $id[$var]?>" class="thumbnail">
+				<img src="<?php echo $img[($var)];?><?php echo rand(1,1);?>.jpg" /></a></div>
 			</div>
         </div>
       </div>
@@ -405,7 +272,7 @@ for($i = 0; $i < mysqli_num_rows($dishes); $i++)
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Hunger-Feed, Inc. </p>
+        <p>&copy; 2014 Hunger-Feed, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
     </div><!-- /.container -->
 
@@ -416,5 +283,4 @@ for($i = 0; $i < mysqli_num_rows($dishes); $i++)
     <script src="../dist/js/bootstrap.min.js"></script>
     <script src="../assets/js/docs.min.js"></script>
   </body>
-
 </html>
