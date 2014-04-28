@@ -1,3 +1,14 @@
+<!-- 
+CSC470
+NetFood
+Created 04/28/2014
+
+Rocco Petrongolo
+Warren Smith
+Pedro Furlanetto
+Jared Milburn
+Chris Borm
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -95,6 +106,7 @@ echo '<li class="dropdown">
 <ul class="dropdown-menu">
 <li><a href="past.php">Past Selections</a></li>
 <li><a href="favorite.php">Favorite Dishes</a></li>
+<li><a href="dishupload.php">Upload a dish</a></li>
 </ul>
 </li>
 </ul>

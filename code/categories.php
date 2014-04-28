@@ -1,3 +1,15 @@
+<!-- 
+CSC470
+NetFood
+Created 04/28/2014
+
+Rocco Petrongolo
+Warren Smith
+Pedro Furlanetto
+Jared Milburn
+Chris Borm
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -113,6 +125,7 @@ for($i = 0; $i < mysqli_num_rows($dishes_american); $i++)
 							<ul class="dropdown-menu">
 								<li><a href="#">Past Selections</a></li>
 								<li><a href="#">Favorite Dishes</a></li>
+								<li><a href="dishupload.php">Upload a dish</a></li>
 							</ul>
 						</li>
 					</ul>
