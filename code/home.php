@@ -105,8 +105,8 @@ $con = mysqli_connect($server, $user_name, $password, $database);
 					echo '<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="past.php">Past Selections</a></li>
-								<li><a href="favorite.php">Favorite Dishes</a></li>
+								<li><a href="past.php">Past Selection</a></li>
+								<li><a href="favorite.php">Favorite Dish</a></li>
 								<li><a href="dishupload.php">Upload a dish</a></li>
 							</ul>
 						</li>
