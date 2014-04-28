@@ -1,4 +1,5 @@
 <?php
+//Connecting the database
 $user_name = "student5";
 $password = "tOiTvwxpsM";
 $database = "student5";
@@ -45,7 +46,7 @@ $con = mysqli_connect($server, $user_name, $password, $database);
   
   <div class="navbar-wrapper">
       <div class="container">
-
+		<!--Navbar-->
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
           <div class="container-fluid">
             <div class="navbar-header">
@@ -63,33 +64,34 @@ $con = mysqli_connect($server, $user_name, $password, $database);
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
               <?php  
+				//If the user is logged in show this on navbar
 			    $email_cookie = $_COOKIE['email'];
 				if(isset($email_cookie)){
 					echo '<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Past Selections</a></li>
-								<li><a href="#">Favorite Dishes</a></li>
+								<li><a href="past.php">Past Selections</a></li>
+								<li><a href="favorite.php">Favorite Dishes</a></li>
 							</ul>
 						</li>
 					</ul>
 					<form class="navbar-form navbar-right" role="form" method="post" action="logout.php">
-					<button name="logout" type="submit" class="btn btn-success">Log Out</button>
+						<button name="logout" type="submit" class="btn btn-success">Log Out</button>
 					</form>';
 				
-				
+				//If the user is not logged in show this on navbar
 				} else {
-				echo '</ul>
-					<form class="navbar-form navbar-right" role="form" method="post" action="login.php">
-				<div class="form-group">
-					<input name="email" type="text" placeholder="Email" class="form-control">
-				</div>
-				<div class="form-group">
-					<input name="password" type="password" placeholder="Password" class="form-control">
-				</div>
-				<button name="signin" type="submit" class="btn btn-success">Sign in</button>
-				<p><font color = "ffffff">Don\'t have an account?</font><a href="signup_form.php"><font color = "0000ff"><b> Sign up now</b></font></a></p>
-			  </form>';
+					echo '</ul>
+						<form class="navbar-form navbar-right" role="form" method="post" action="login.php">
+							<div class="form-group">
+								<input name="email" type="text" placeholder="Email" class="form-control">
+							</div>
+							<div class="form-group">
+								<input name="password" type="password" placeholder="Password" class="form-control">
+							</div>
+							<button name="signin" type="submit" class="btn btn-success">Sign in</button>
+							<p><font color = "ffffff">Don\'t have an account?</font><a href="signup_form.php"><font color = "0000ff"><b> Sign up now</b></font></a></p>
+						</form>';
 				}
 			  ?>
 			</div>
@@ -101,6 +103,7 @@ $con = mysqli_connect($server, $user_name, $password, $database);
     <div class="container">
 
 		<form method="post" role="form" action="signup.php">
+			<!--Sign up form-->
 			<div class="form-group">
 				<label for="inputLastName">Last Name</label>
 				<input name="lastName" class="form-control" id="inputLastName" placeholder="Enter last name">
@@ -109,10 +112,6 @@ $con = mysqli_connect($server, $user_name, $password, $database);
 				<label for="inputFirstName">First Name</label>
 				<input name="firstName" class="form-control" id="inputFirstName" placeholder="Enter first name">
 			</div>
-			<!--<div class="form-group">
-				<label for="inputUsername">Username</label>
-				<input type="username" class="form-control" id="inputUsername" placeholder="Enter username">
-			</div>-->
 			<div class="form-group">
 				<label for="inputEmail">Email address</label>
 				<input name="email" type="email" class="form-control" id="inputEmail" placeholder="Enter email">
@@ -132,6 +131,7 @@ $con = mysqli_connect($server, $user_name, $password, $database);
 			</div>
 			<button type="submit" class="btn btn-default">Submit</button>
 		</form>
+		<!--End of sign up form-->
 
 
     </div> <!-- /container -->
