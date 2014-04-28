@@ -70,7 +70,7 @@ font-size:16px;
 <body>
 <div class="navbar-wrapper">
 <div class="container">
-
+ 
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 <div class="container-fluid">
 <div class="navbar-header">
@@ -160,7 +160,7 @@ $name_past = $array['dish_name'];
 // var_dump($img);
 -->
 
-<a href="food_info.php?info=<?php echo $id_past;?>"><img src="<?php echo $path_past;?>1.jpg" width=140 height=140/></a></div>
+<a href="food_info.php?info=<?php echo $id_past;?>"><img src="<?php echo $path_past;?>1.jpg" width=270/></a></div>
 </div>
 </div>
 <div class="col-md-7">

@@ -161,7 +161,7 @@ $name_fav = $array['dish_name'];
 // var_dump($img);
 -->
 
-<a href="food_info.php?info=<?php echo $id_fav;?>"><img src="<?php echo $path_fav;?>1.jpg" width=140 height=140/></a></div>
+<a href="food_info.php?info=<?php echo $id_fav;?>"><img src="<?php echo $path_fav;?>1.jpg" width=270></a></div>
 </div>
 </div>
 <div class="col-md-7">

@@ -186,7 +186,7 @@ $server = "127.0.0.1";
 					//$img = $row['img_path'];
 					//var_dump($img);
 				?>
-				<img src="<?php echo $array['img_path'];?>1.jpg" width=270 height=270/></a></div>
+				<img src="<?php echo $array['img_path'];?>1.jpg" width=270/></a></div>
 				<p>Dish Name: <?php echo $array['dish_name'] ?></p>
 				</br>
 				<form method="POST" name="favorite" action="food_info.php?info=<?php echo $info;?>">
@@ -259,22 +259,21 @@ $server = "127.0.0.1";
 			</div>
 			
 			
-			<!-- Description section -->
+			<!-- Description section
 			<div class="col-md-7">
 			<h2> Description: </h2>
 			<p> ** Description goes here ** </p>
 			<br><br>
 			</div>
-			
+			-->
 			
 			<!-- Comment box section -->
 			<div class="col-md-7">
 			<h2> Let People Know What You Think: </h2>
-			<!-- begin htmlcommentbox.com -->
-			<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
+			<div id="HCB_comment_box"></a></div>
 			<link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
 			<script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=(hcb_user.PAGE || ""+window.location), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=16862&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
-			<!-- end htmlcommentbox.com -->
+			<!-- end Comment box section -->
 			</div>
 		
 		
